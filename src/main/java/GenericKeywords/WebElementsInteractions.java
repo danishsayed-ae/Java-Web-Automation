@@ -21,4 +21,9 @@ public class WebElementsInteractions {
     {
         driver.get(url);
     }
+
+    public String retrieveTextData (By locator)
+    {
+        return driver.findElement(locator).getText();
+    }
 }
