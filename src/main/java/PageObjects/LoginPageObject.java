@@ -6,10 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPageObject extends WebElementsInteractions
 {
-//    WebDriver driver;
     private final By userNameTextField = By.id("user-name");
     private final By passwordTextFiled = By.id("password");
     private final By loginButton = By.id("login-button");
+    public LoginPageObject(WebDriver driver)
+    {
+        this.driver = driver;
+    }
 
     public void userLogin(String username, String password)
     {
