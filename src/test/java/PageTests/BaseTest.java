@@ -22,9 +22,9 @@ public class BaseTest {
         {
             if(AppConstants.platform.equalsIgnoreCase("local"))
             {
-                co.addArguments("--remote-allow-origins=*");
+//                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeOptions(co);
+//                driver = new ChromeOptions();
             }
         }
         else if (browser.equalsIgnoreCase("firefox"))
@@ -33,7 +33,7 @@ public class BaseTest {
             {
                 fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver(fo);
+//                driver = new FirefoxDriver(fo);
             }
         }
         else
