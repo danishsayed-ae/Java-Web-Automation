@@ -38,6 +38,7 @@ public class BaseTest {
             browser = AppConstants.browserName;
         }
         System.out.println("Browser name is " +browser);
+
         if(browser.equalsIgnoreCase("chrome"))
         {
             if(AppConstants.platform.equalsIgnoreCase("local"))
