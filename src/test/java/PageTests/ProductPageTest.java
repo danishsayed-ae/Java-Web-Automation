@@ -14,6 +14,7 @@ public class ProductPageTest extends BaseTest{
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("performance_glitch_user","secret_sauce");
+        System.out.println(productPageObject.getTitleOfPage());
         System.out.println(productPageObject.getProductName());
     }
 }

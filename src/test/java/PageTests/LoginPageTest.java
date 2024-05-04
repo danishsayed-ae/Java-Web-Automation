@@ -15,6 +15,5 @@ public class LoginPageTest extends BaseTest {
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("standard_user","secret_sauce");
         System.out.println(productPageObject.getTitleOfPage());
-        Thread.sleep(3000);
     }
 }
