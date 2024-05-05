@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ExtentReportHelper {
     public static ExtentReports extentReports;
-    static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd_MM_yyyy_hh_mm_ss");
+    static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd_MMM_yyyy_hh_mm_ss");
 
 
     public static ExtentReports getReport() {
