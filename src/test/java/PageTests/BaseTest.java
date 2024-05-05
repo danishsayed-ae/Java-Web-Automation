@@ -1,8 +1,10 @@
 package PageTests;
 
 import Base.AppConstants;
+import Base.BasePage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -16,12 +18,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.testng.internal.TestListenerHelper;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 import static Utilities.ExtentReportHelper.getReport;
@@ -39,8 +39,7 @@ public class BaseTest {
 
     @Parameters({"browserName"})
 
-
-    @BeforeTest
+    @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult)
     {
         if (browserName!=null)
@@ -86,21 +85,28 @@ public class BaseTest {
         }
         ExtentTest extentTest = extentReports.createTest(iTestResult.getMethod().getMethodName());
         testLogger.set(extentTest);
-        testLogger.get().log(Status.INFO, "Driver start time"+ LocalDateTime.now());
+        testLogger.get().log(Status.INFO, "Driver Start Time: "+ LocalDateTime.now());
     }
 
-    @AfterTest
-    public void tearDownTest(ITestResult iTestResult)
-    {
+    @AfterMethod
+    public void tearDownTest(ITestResult iTestResult) throws IOException {
         if (iTestResult.isSuccess())
         {
-            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName()+ " is successfully passed", ExtentColor.GREEN));
+            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName()+ " is successfully passed.", ExtentColor.GREEN));
         }
         else
         {
             testLogger.get().log(Status.FAIL, "Test is failed due to: "+iTestResult.getThrowable());
-            String 
+            String screenshot = BasePage.getScreenshot(iTestResult.getMethod().getMethodName()+".jpg", driver);
+            testLogger.get().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(BasePage.convertImg_Base64(screenshot)).build());
+            testLogger.get().log(Status.INFO, "Driver End Time: "+LocalDateTime.now());
         }
         driver.quit();
+    }
+
+    @AfterClass
+    public void flushTestReport()
+    {
+        extentReports.flush();
     }
 }

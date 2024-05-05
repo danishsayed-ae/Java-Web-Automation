@@ -10,7 +10,7 @@ public class LoginPageTest extends BaseTest {
     ProductPageObject productPageObject;
 
     @Test
-    public void userLoginTest() throws InterruptedException {
+    public void userLoginTest() {
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("standard_user","secret_sauce");
