@@ -11,21 +11,33 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.LocalDateTime;
 
+import static Base.AppConstants.platform;
 import static Utilities.ExtentReportHelper.getReport;
 
 public class BaseTest {
     protected WebDriver driver;
     protected String browser;
+
+    ChromeOptions co = new ChromeOptions();
+    EdgeOptions eo = new EdgeOptions();
+    FirefoxOptions fo = new FirefoxOptions();
 
 //    It helps us to create independent thread
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
@@ -37,8 +49,7 @@ public class BaseTest {
     @Parameters({"browserName"})
 
     @BeforeMethod
-    public void setupTest(@Optional String browserName, ITestResult iTestResult)
-    {
+    public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
         if (browserName!=null)
         {
             browser = browserName;
@@ -47,33 +58,63 @@ public class BaseTest {
         {
             browser = AppConstants.browserName;
         }
-        logger.info("Browser name is " +browser);
+        logger.info("Browser name is: " +browser);
 
         if(browser.equalsIgnoreCase("chrome"))
         {
-            if(AppConstants.platform.equalsIgnoreCase("local"))
+            if(platform.equalsIgnoreCase("local"))
             {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             }
+            else if (platform.equalsIgnoreCase("remote"))
+            {
+                co.setPlatformName("linux");
+                co.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
+            }
+            else
+            {
+                logger.error(platform + "This platform is not supported!");
+            }
         }
         else if (browser.equalsIgnoreCase("firefox"))
         {
-            if(AppConstants.platform.equalsIgnoreCase("local"))
+            if(platform.equalsIgnoreCase("local"))
             {
 //                fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             }
+            else if (platform.equalsIgnoreCase("remote"))
+            {
+                fo.setPlatformName("linux");
+                fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
+            }
+            else
+            {
+                logger.error(platform + "This platform is not supported!");
+            }
         }
         else if (browser.equalsIgnoreCase("edge"))
         {
-            if(AppConstants.platform.equalsIgnoreCase("local"))
+            if(platform.equalsIgnoreCase("local"))
             {
 //                eo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
+            }
+            else if (platform.equalsIgnoreCase("remote"))
+            {
+                eo.setPlatformName("linux");
+                eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                driver= new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
+            }
+            else
+            {
+                logger.error(platform + "This platform is not supported!");
             }
         }
         else
