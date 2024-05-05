@@ -9,17 +9,14 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import org.testng.internal.TestListenerHelper;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -29,13 +26,13 @@ import static Utilities.ExtentReportHelper.getReport;
 public class BaseTest {
     protected WebDriver driver;
     protected String browser;
-    private ChromeOptions co;
-    private FirefoxOptions fo;
-    private EdgeOptions eo;
+
 //    It helps us to create independent thread
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
+
     protected static final ExtentReports extentReports = getReport();
 
+    private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
     @Parameters({"browserName"})
 
@@ -50,7 +47,7 @@ public class BaseTest {
         {
             browser = AppConstants.browserName;
         }
-        System.out.println("Browser name is " +browser);
+        logger.info("Browser name is " +browser);
 
         if(browser.equalsIgnoreCase("chrome"))
         {
@@ -81,7 +78,7 @@ public class BaseTest {
         }
         else
         {
-            System.out.println("Browsername is not supported!!!");
+            logger.info("Browser name is not supported!");
         }
         ExtentTest extentTest = extentReports.createTest(iTestResult.getMethod().getMethodName());
         testLogger.set(extentTest);
