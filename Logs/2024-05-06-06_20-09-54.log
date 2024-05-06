@@ -1,0 +1,5 @@
+2024-05-06 20:09:54 [TestNG-tests-1] INFO  BaseTest:61 - Browser name is: edge
+2024-05-06 20:09:54 [TestNG-tests-2] INFO  BaseTest:61 - Browser name is: edge
+2024-05-06 20:09:58 [TestNG-tests-1] INFO  LoginPageTest:21 - Products
+2024-05-06 20:10:03 [TestNG-tests-2] INFO  ProductPageTest:21 - Products
+2024-05-06 20:10:03 [TestNG-tests-2] INFO  ProductPageTest:22 - Sauce Labs Backpack
