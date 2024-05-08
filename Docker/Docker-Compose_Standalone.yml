@@ -1,5 +1,5 @@
 version: "3"
-service:
+services:
   chrome:
     image: seleniarm/standalone-chromium:latest
     hostname: chrome
@@ -9,5 +9,17 @@ service:
       - "4441:4444"
       - "7901:7900"
     environment:
-      - SE_VNC_NO_PASSWORD_1
+      - SE_VNC_NO_PASSWORD=1
+      - SE_NODE_MAX_SESSIONS=1
+
+  edge:
+    image: selenium/standalone-edge:latest
+    hostname: edge
+    privileged: true
+    shm_size: 2gb
+    ports:
+      - "4442:4444"
+      - "7902:7900"
+    environment:
+      - SE_VNC_NO_PASSWORD=1
       - SE_NODE_MAX_SESSIONS=1
