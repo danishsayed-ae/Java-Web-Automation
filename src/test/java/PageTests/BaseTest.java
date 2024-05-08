@@ -72,7 +72,7 @@ public class BaseTest {
             {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
+                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
             }
             else
             {
@@ -91,7 +91,7 @@ public class BaseTest {
             {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), fo);
             }
             else
             {
@@ -110,7 +110,7 @@ public class BaseTest {
             {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver= new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
+                driver= new RemoteWebDriver(new URL("http://localhost:4441/"), eo);
             }
             else
             {
