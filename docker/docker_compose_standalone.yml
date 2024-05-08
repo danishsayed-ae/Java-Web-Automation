@@ -1,0 +1,13 @@
+version: "3"
+services:
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    hostname: chrome
+    privileged: true
+    shm-size: 2gb
+    ports:
+      - "4441:4444"
+      - "7901:7900"
+    environment:
+      - SE_VNC_NO_PASSWORD=1
+      - SE_NODE_MAX_SESSIONS=1
