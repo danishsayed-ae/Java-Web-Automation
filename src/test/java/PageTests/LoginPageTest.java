@@ -14,7 +14,7 @@ public class LoginPageTest extends BaseTest {
     private static final Logger logger = LogManager.getLogger(LoginPageTest.class);
 
     @Test
-    public void userLoginTest() {
+    public void userLoginTest() throws InterruptedException {
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("standard_user","secret_sauce");

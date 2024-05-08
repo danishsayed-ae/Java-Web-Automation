@@ -13,11 +13,11 @@ public class ProductPageTest extends BaseTest{
     private static final Logger logger = LogManager.getLogger(ProductPageTest.class);
 
     @Test
-    public void testProductName()
-    {
+    public void testProductName() throws InterruptedException {
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("performance_glitch_user","secret_sauce");
+        Thread.sleep(3000);
         logger.info(productPageObject.getTitleOfPage());
         logger.info(productPageObject.getProductName());
     }

@@ -19,11 +19,12 @@ public class LoginPageObject extends WebElementsInteractions
     }
 
 //    We have created this method that expects two String parameters username and password
-    public void userLogin(String username, String password)
-    {
+    public void userLogin(String username, String password) throws InterruptedException {
         goToApplication("https://www.saucedemo.com/");
         sendText(userNameTextField, username);
+        Thread.sleep(3000);
         sendText(passwordTextFiled, password);
+        Thread.sleep(3000);
         clickElement(loginButton);
     }
 
