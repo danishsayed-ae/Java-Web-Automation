@@ -6,4 +6,20 @@ services:
     depends_on:
       - selenium_hub
     environment:
-      - SE_EVENT_BUS_HOST = SELENIUM-HUB
+      - SE_EVENT_BUS_HOST = selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT = 4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT = 4443
+      - SE_VNC_NO_PASSWORD = 1
+      - SE_NODE_MAX_SESSION = 1
+
+  edge:
+    image: selenium/node-edge
+    shm_size: 2gb
+    depends_on:
+      - selenium_hub
+    environment:
+      - SE_EVENT_BUS_HOST = selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT = 4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT = 4443
+      - SE_VNC_NO_PASSWORD = 1
+      - SE_NODE_MAX_SESSION = 1
