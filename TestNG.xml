@@ -10,7 +10,7 @@
     </test>
 
     <test name="Test 2">
-        <parameter name="browserName" value="edge"/>
+        <parameter name="browserName" value="firefox"/>
         <classes>
             <class name="PageTests.ProductPageTest"/>
         </classes>
