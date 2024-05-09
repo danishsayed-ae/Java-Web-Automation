@@ -110,7 +110,7 @@ public class BaseTest {
             {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver= new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
+                driver= new RemoteWebDriver(new URL("http://localhost:4442/"), eo);
             }
             else
             {

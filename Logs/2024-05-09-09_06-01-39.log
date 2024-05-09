@@ -1,0 +1,3 @@
+2024-05-09 06:01:39 [TestNG-tests-2] INFO  BaseTest:61 - Browser name is: edge
+2024-05-09 06:01:39 [TestNG-tests-1] INFO  BaseTest:61 - Browser name is: edge
+2024-05-09 06:01:56 [TestNG-tests-1] INFO  LoginPageTest:21 - Products
