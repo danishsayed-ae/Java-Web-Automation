@@ -62,13 +62,13 @@ public class BaseTest {
 
         if(browser.equalsIgnoreCase("chrome"))
         {
-            if(platform.equalsIgnoreCase("local"))
+            if(AppConstants.platform.equalsIgnoreCase("local"))
             {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             }
-            else if (platform.equalsIgnoreCase("remote"))
+            else if (AppConstants.platform.equalsIgnoreCase("remote"))
             {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
@@ -76,6 +76,12 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
 //                Docker-Compose_Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
+            }
+            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
+            {
+                co.addArguments("--headless");
+                co.addArguments("--disable-gpu");
+                co.addArguments("--no-sandbox");
             }
             else
             {
