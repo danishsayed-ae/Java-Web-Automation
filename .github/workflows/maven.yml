@@ -40,6 +40,7 @@ jobs:
       run: >
         mvn clean test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
+        -DbrowserName=${{inputs.browsername}}
         -Dmaven.test.failure.ignore=true
 
 #Report Generation
