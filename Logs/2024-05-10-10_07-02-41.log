@@ -1,0 +1,5 @@
+2024-05-10 07:02:41 [TestNG-tests-1] INFO  BaseTest:61 - Browser name is: chrome
+2024-05-10 07:02:41 [TestNG-tests-2] INFO  BaseTest:61 - Browser name is: firefox
+2024-05-10 07:02:55 [TestNG-tests-1] INFO  LoginPageTest:21 - Products
+2024-05-10 07:03:05 [TestNG-tests-2] INFO  ProductPageTest:21 - Products
+2024-05-10 07:03:05 [TestNG-tests-2] INFO  ProductPageTest:22 - Sauce Labs Backpack
