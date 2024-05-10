@@ -39,7 +39,7 @@ jobs:
     - name: Build with TestNG xml files
       run: >
         mvn clean test
-        -Dsurefire.suiteXmlFiles=${inputs.xmlfilename}
+        -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -Dmaven.test.failure.ignore=true
 
 #Report Generation
