@@ -106,6 +106,15 @@ public class BaseTest {
 //                Docker-Compose_Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
             }
+            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
+            {
+                fo.addArguments("--headless");//For GitHub Actions
+                fo.addArguments("--disable-gpu");
+                fo.addArguments("--no-sandbox");
+                WebDriverManager.firefoxdriver().setup();
+                fo.addArguments("--remote-allow-origins=*");
+                driver = new FirefoxDriver(fo);
+            }
             else
             {
                 logger.error(platform + "This platform is not supported!");
@@ -127,6 +136,15 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
 //                Docker-Compose_Standalone URL
 //                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
+            }
+            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
+            {
+                eo.addArguments("--headless");//For GitHub Actions
+                eo.addArguments("--disable-gpu");
+                eo.addArguments("--no-sandbox");
+                WebDriverManager.edgedriver().setup();
+                eo.addArguments("--remote-allow-origins=*");
+                driver = new EdgeDriver(eo);
             }
             else
             {
