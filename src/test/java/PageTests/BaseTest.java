@@ -82,6 +82,9 @@ public class BaseTest {
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
+                WebDriverManager.chromedriver().setup();
+                co.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(co);
             }
             else
             {
