@@ -42,7 +42,7 @@ jobs:
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -Dmaven.test.failure.ignore=true
 
-#Report Generation    
+#Report Generation
     - name: archive report artifact
       uses: actions/upload-artifact@v3
       with:
