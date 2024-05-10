@@ -79,7 +79,7 @@ public class BaseTest {
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {
-                co.addArguments("--headless");
+                co.addArguments("--headless");//For GitHub Actions
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
                 WebDriverManager.chromedriver().setup();
