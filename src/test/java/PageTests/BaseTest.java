@@ -72,7 +72,10 @@ public class BaseTest {
             {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
+//                Docker-Compose_Grid URL
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
+//                Docker-Compose_Standalone URL
+//                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
             }
             else
             {
@@ -91,7 +94,10 @@ public class BaseTest {
             {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
+//                Docker-Compose_Grid URL
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
+//                Docker-Compose_Standalone URL
+//                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
             }
             else
             {
@@ -110,7 +116,10 @@ public class BaseTest {
             {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
+//                Docker-Compose_Grid URL
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
+//                Docker-Compose_Standalone URL
+//                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
             }
             else
             {
