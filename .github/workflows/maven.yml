@@ -9,6 +9,15 @@
 name: Java CI with Maven
 
 on:
+  workflow_dispatch:
+    inputs:
+      browsername:
+        type: string
+        description: "Browser Name: "
+        default: chrome
+      xmlfilename:
+        type: string
+        description: "Enter suite xml file name: "
   push:
     branches: [ "main" ]
   pull_request:
@@ -28,4 +37,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with TestNG xml files
-      run: mvn clean test
+      run: >
+        mvn clean test
+        -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
+        -Dmaven.test.failure.ignore=true
+
+#Report Generation    
+    - name: archive report artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: sparkHTML
+        path: ./Report/*.html
