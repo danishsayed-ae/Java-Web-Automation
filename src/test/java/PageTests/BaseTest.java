@@ -81,7 +81,7 @@ public class BaseTest {
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
                 WebDriverManager.chromedriver().setup();
-                co.addArguments("--remote-allow-origins=*");
+//                co.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(co);
             }
             else
@@ -112,7 +112,7 @@ public class BaseTest {
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
                 WebDriverManager.firefoxdriver().setup();
-                fo.addArguments("--remote-allow-origins=*");
+//                fo.addArguments("--remote-allow-origins=*");
                 driver = new FirefoxDriver(fo);
             }
             else
@@ -143,7 +143,7 @@ public class BaseTest {
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
                 WebDriverManager.edgedriver().setup();
-                eo.addArguments("--remote-allow-origins=*");
+//                eo.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(eo);
             }
             else
