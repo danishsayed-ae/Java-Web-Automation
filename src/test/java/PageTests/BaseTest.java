@@ -72,13 +72,13 @@ public class BaseTest {
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose_Grid URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
 
 //                Docker-Compose_Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
 
 //                Jenkins URL
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {
@@ -108,13 +108,13 @@ public class BaseTest {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 //                Docker-Compose_Grid URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
 
 //                Docker-Compose_Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
 
 //                Jenkins URL
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {
@@ -145,13 +145,13 @@ public class BaseTest {
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose_Grid URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
 
 //                Docker-Compose_Standalone URL
 //                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
 
 //                Jenkins URL
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {

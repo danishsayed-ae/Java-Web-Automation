@@ -1,0 +1,5 @@
+2024-05-22 06:42:55 [main] INFO  BaseTest:59 - Browser name is: chrome
+2024-05-22 06:43:04 [main] INFO  LoginPageTest:21 - Products
+2024-05-22 06:43:04 [main] INFO  BaseTest:59 - Browser name is: chrome
+2024-05-22 06:43:20 [main] INFO  ProductPageTest:21 - Products
+2024-05-22 06:43:20 [main] INFO  ProductPageTest:22 - Sauce Labs Backpack
