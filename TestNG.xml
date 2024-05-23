@@ -8,9 +8,14 @@
             <class name="PageTests.LoginPageTest"/>
         </classes>
     </test>
-
     <test name="Test 2">
         <parameter name="browserName" value="firefox"/>
+        <classes>
+            <class name="PageTests.ProductPageTest"/>
+        </classes>
+    </test>
+    <test name="Test 3">
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="PageTests.ProductPageTest"/>
         </classes>
