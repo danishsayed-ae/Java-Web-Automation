@@ -1,0 +1,3 @@
+2024-05-24 09:23:08 [TestNG-tests-2] INFO  BaseTest:59 - Browser name is: firefox
+2024-05-24 09:23:08 [TestNG-tests-1] INFO  BaseTest:59 - Browser name is: chrome
+2024-05-24 09:23:19 [TestNG-tests-2] INFO  BaseTest:59 - Browser name is: edge
