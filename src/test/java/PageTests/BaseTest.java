@@ -78,7 +78,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
 
 //                Jenkins URL - Danish Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
 
 //                Jenkins URL - Danish Office Laptop
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
@@ -116,8 +116,8 @@ public class BaseTest {
 //                Docker-Compose_Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
 
-//                Jenkins URL - Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
+//                Jenkins URL - Danish Home
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
 
 //                Jenkins URL - Danish Office Laptop
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
@@ -157,7 +157,7 @@ public class BaseTest {
 //                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
 
 //                Jenkins URL - Danish Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
 
 //                Jenkins URL - Danish Office Laptop
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
