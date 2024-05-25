@@ -20,4 +20,10 @@
             <class name="pageTests.ProductPageTest"/>
         </classes>
     </test>
+    <test name="Test 4">
+        <parameter name="browserName" value="firefox"/>
+        <classes>
+            <class name="pageTests.RecreationalTest"/>
+        </classes>
+    </test>
 </suite>
