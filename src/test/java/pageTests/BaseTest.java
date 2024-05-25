@@ -11,6 +11,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +32,9 @@ import static utilities.ExtentReportHelper.getReport;
 
 public class BaseTest {
     protected WebDriver driver;
+    protected JavascriptExecutor js;
     protected String browser;
+
 
     ChromeOptions co = new ChromeOptions();
     EdgeOptions eo = new EdgeOptions();

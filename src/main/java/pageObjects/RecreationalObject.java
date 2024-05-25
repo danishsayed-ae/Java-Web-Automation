@@ -2,6 +2,7 @@ package pageObjects;
 
 import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
@@ -44,8 +45,9 @@ public class RecreationalObject extends WebElementsInteractions {
     private final By pilotTrainingCertificate = By.xpath("//label[@for='pilotTrainingCertificate']");
     private final By termsAndConditions = By.id("checkbox");
 
-    public RecreationalObject(WebDriver driver) {
+    public RecreationalObject(WebDriver driver, JavascriptExecutor js) {
         this.driver = driver;
+        this.js = js;
     }
 
     public void fillApplicantInformation(String firstNameValue, String lastNameValue, String arabicFullNameValue, String arabicFamilyNameValue, String arabicAliasValue) {
