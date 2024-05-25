@@ -4,8 +4,6 @@ import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.awt.*;
-
 public class LoginPageObject extends WebElementsInteractions
 {
 //    We are declaring a private variable so that it cannot be accessed outside the LoginPageObject class

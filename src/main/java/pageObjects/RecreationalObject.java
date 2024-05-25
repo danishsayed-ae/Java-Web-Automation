@@ -20,10 +20,10 @@ public class RecreationalObject extends WebElementsInteractions {
     private final By gender = By.id("gender");
     private final By genderValue = By.xpath("//*[text()='Male']");
     private final By nationality = By.id("nationality");
-    private final By nationalityValue = By.xpath("//*[text()='Algeria']");
+    private final By nationalityValue = By.xpath("//*[text()='Afghanistan']");
     private final By passportNumber = By.id("passportNo");
     private final By passportIssuePlace = By.id("passportIssuePlace");
-    private final By passportIssuePlaceValue = By.xpath("//*[text()='Algeria']");
+    private final By passportIssuePlaceValue = By.xpath("//*[text()='Albania']");
     private final By passportIssueDate = By.name("passportIssueDate");
     private final By passportExpiryDate = By.name("passportExpiryDate");
     private final By emiratesIDNo = By.id("emiratesIDNo");
