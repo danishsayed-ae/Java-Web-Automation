@@ -5,19 +5,19 @@
     <test name="Test 1">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="PageTests.LoginPageTest"/>
+            <class name="pageTests.LoginPageTest"/>
         </classes>
     </test>
     <test name="Test 2">
         <parameter name="browserName" value="firefox"/>
         <classes>
-            <class name="PageTests.ProductPageTest"/>
+            <class name="pageTests.ProductPageTest"/>
         </classes>
     </test>
     <test name="Test 3">
         <parameter name="browserName" value="edge"/>
         <classes>
-            <class name="PageTests.ProductPageTest"/>
+            <class name="pageTests.ProductPageTest"/>
         </classes>
     </test>
 </suite>
