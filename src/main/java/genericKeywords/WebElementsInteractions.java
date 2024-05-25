@@ -11,8 +11,8 @@ import java.awt.event.KeyEvent;
 
 public class WebElementsInteractions {
     protected WebDriver driver;
-    JavascriptExecutor js = (JavascriptExecutor) driver;
-    Robot rb;
+    protected JavascriptExecutor js = (JavascriptExecutor) driver;
+    protected Robot rb;
 
     {
         try {
