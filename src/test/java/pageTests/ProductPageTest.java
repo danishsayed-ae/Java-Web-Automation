@@ -15,7 +15,7 @@ public class ProductPageTest extends BaseTest{
     private static final Logger logger = LogManager.getLogger(ProductPageTest.class);
 
     @Test
-    public void testProductName() throws InterruptedException, AWTException {
+    public void testProductName() throws InterruptedException {
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("performance_glitch_user","secret_sauce");
