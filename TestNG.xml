@@ -22,7 +22,7 @@
     <test name="Test 4">
         <parameter name="browserName" value="firefox"/>
         <classes>
-            <class name="pageTests.RecreationalTest"/>
+            <class name="pageTests.LoginTest"/>
         </classes>
     </test>
 </suite>
