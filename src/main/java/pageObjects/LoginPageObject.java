@@ -1,6 +1,6 @@
-package PageObjects;
+package pageObjects;
 
-import GenericKeywords.WebElementsInteractions;
+import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,7 +20,7 @@ public class LoginPageObject extends WebElementsInteractions
 
 //    We have created this method that expects two String parameters username and password
     public void userLogin(String username, String password) throws InterruptedException {
-        goToApplication("https://www.saucedemo.com/");
+        visitURL("https://www.saucedemo.com/");
         sendText(userNameTextField, username);
         Thread.sleep(3000);
         sendText(passwordTextFiled, password);

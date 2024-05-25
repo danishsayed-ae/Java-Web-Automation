@@ -1,7 +1,7 @@
-package PageTests;
+package pageTests;
 
-import Base.AppConstants;
-import Base.BasePage;
+import base.AppConstants;
+import base.BasePage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
-import static Base.AppConstants.platform;
-import static Utilities.ExtentReportHelper.getReport;
+import static base.AppConstants.platform;
+import static utilities.ExtentReportHelper.getReport;
 
 public class BaseTest {
     protected WebDriver driver;

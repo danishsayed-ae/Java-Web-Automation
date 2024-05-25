@@ -1,10 +1,9 @@
-package PageTests;
+package pageTests;
 
-import PageObjects.LoginPageObject;
-import PageObjects.ProductPageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.ProductPageObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class LoginPageTest extends BaseTest {

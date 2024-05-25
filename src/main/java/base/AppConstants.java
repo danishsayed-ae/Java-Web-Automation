@@ -1,4 +1,4 @@
-package Base;
+package base;
 
 public class AppConstants {
     public static final String browserName = System.getProperty("browserName", "chrome");
