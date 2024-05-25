@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class ProductPageTest extends BaseTest{
     LoginPageObject loginPageObject;
     ProductPageObject productPageObject;
@@ -13,7 +15,7 @@ public class ProductPageTest extends BaseTest{
     private static final Logger logger = LogManager.getLogger(ProductPageTest.class);
 
     @Test
-    public void testProductName() throws InterruptedException {
+    public void testProductName() throws InterruptedException, AWTException {
         loginPageObject = new LoginPageObject(driver);
         productPageObject = new ProductPageObject(driver);
         loginPageObject.userLogin("performance_glitch_user","secret_sauce");

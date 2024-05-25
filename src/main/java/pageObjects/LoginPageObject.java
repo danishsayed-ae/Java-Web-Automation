@@ -4,6 +4,8 @@ import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
+
 public class LoginPageObject extends WebElementsInteractions
 {
 //    We are declaring a private variable so that it cannot be accessed outside the LoginPageObject class
@@ -13,7 +15,7 @@ public class LoginPageObject extends WebElementsInteractions
     private final By loginButton = By.id("login-button");
 
 //    We have created a constructor and the parameter driver is given life from the WebElementsInteractions class and this driver will be used in LoginPageTest
-    public LoginPageObject(WebDriver driver)
+    public LoginPageObject(WebDriver driver) throws AWTException
     {
         this.driver = driver;
     }
