@@ -11,7 +11,7 @@ public class ProductPageObject extends WebElementsInteractions {
     private final By getFirstProductText = By.xpath("//a[@id='item_4_title_link']/div");
 
 
-    public ProductPageObject(WebDriver driver) throws AWTException
+    public ProductPageObject(WebDriver driver)
     {
         this.driver = driver;
     }

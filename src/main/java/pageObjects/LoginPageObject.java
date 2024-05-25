@@ -15,7 +15,7 @@ public class LoginPageObject extends WebElementsInteractions
     private final By loginButton = By.id("login-button");
 
 //    We have created a constructor and the parameter driver is given life from the WebElementsInteractions class and this driver will be used in LoginPageTest
-    public LoginPageObject(WebDriver driver) throws AWTException
+    public LoginPageObject(WebDriver driver)
     {
         this.driver = driver;
     }

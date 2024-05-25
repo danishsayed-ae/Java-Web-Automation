@@ -44,7 +44,7 @@ public class RecreationalObject extends WebElementsInteractions {
     private final By pilotTrainingCertificate = By.xpath("//label[@for='pilotTrainingCertificate']");
     private final By termsAndConditions = By.id("checkbox");
 
-    public RecreationalObject(WebDriver driver) throws AWTException{
+    public RecreationalObject(WebDriver driver) {
         this.driver = driver;
     }
 

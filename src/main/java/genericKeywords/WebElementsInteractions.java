@@ -12,9 +12,17 @@ import java.awt.event.KeyEvent;
 public class WebElementsInteractions {
     protected WebDriver driver;
     JavascriptExecutor js = (JavascriptExecutor) driver;
-    Robot rb = new Robot();
+    Robot rb;
 
-    public WebElementsInteractions() throws AWTException {
+    {
+        try {
+            rb = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public WebElementsInteractions() {
     }
 
     //These are custom created function that helps us to build keyword driven strategy
@@ -43,7 +51,6 @@ public class WebElementsInteractions {
     }
 
     public void uploadFile(By locator, String filePath) {
-
         WebElement uploadfile = driver.findElement(locator);
         uploadfile.click();
         StringSelection uploadDocument = new StringSelection(filePath);
