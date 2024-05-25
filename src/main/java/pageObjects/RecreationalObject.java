@@ -105,4 +105,5 @@ public class RecreationalObject extends WebElementsInteractions {
     public void checkTermsAndConditions() {
         clickElement(termsAndConditions);
     }
+    
 }
