@@ -76,10 +76,10 @@ public class RecreationalObject extends WebElementsInteractions {
         clickElement(emiratesIdExpiryDate);
     }
 
-    public void fillAccountInformation(String mobileNumberValue, String phoneNumberValue, String passwordValue) {
+    public void fillAccountInformation(String emailIdValue, String mobileNumberValue, String phoneNumberValue, String passwordValue) {
         clickElement(accountInformation);
         scrollDown();
-        clickElement(emailId);
+        sendText(emailId, emailIdValue);
         sendText(mobileNumber, mobileNumberValue);
         sendText(phoneNumber, phoneNumberValue);
         sendText(password, passwordValue);
