@@ -58,7 +58,8 @@ public class RecreationalObject extends WebElementsInteractions {
         sendText(arabicFamilyName, arabicFamilyNameValue);
         sendText(arabicAlias, arabicAliasValue);
         clickElement(dateOfBirth);
-        scrollDown();
+//        scrollDown();
+//        js.executeScript("window.scrollBy(0,300)");
         clickElement(placeOfBirth);
         clickElement(placeOfBirthValue);
         clickElement(gender);
@@ -80,13 +81,13 @@ public class RecreationalObject extends WebElementsInteractions {
 
     public void fillAccountInformation(String emailIdValue, String mobileNumberValue, String phoneNumberValue, String passwordValue) {
         clickElement(accountInformation);
-        scrollDown();
+//        scrollDown();
         sendText(emailId, emailIdValue);
         sendText(mobileNumber, mobileNumberValue);
         sendText(phoneNumber, phoneNumberValue);
         sendText(password, passwordValue);
         sendText(confirmPassword, passwordValue);
-        scrollDown();
+//        scrollDown();
     }
 
     public void fillDeclarationOfInformation() {
@@ -94,7 +95,7 @@ public class RecreationalObject extends WebElementsInteractions {
         clickElement(stateCodeValue);
         clickElement(cityCode);
         clickElement(cityCodeValue);
-        scrollDown();
+//        scrollDown();
     }
 
     public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {

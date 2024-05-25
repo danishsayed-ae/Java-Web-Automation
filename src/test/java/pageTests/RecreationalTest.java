@@ -3,11 +3,15 @@ package pageTests;
 import org.testng.annotations.Test;
 import pageObjects.RecreationalObject;
 
+import java.time.Duration;
+
 public class RecreationalTest extends BaseTest{
     RecreationalObject recreationalObject;
 
     @Test
     public void recreationalTest() {
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         recreationalObject = new RecreationalObject(driver, js);
         recreationalObject.fillApplicantInformation("Danish", "Sayed","سيد دانيش","سيد دانيش", "سيد دانيش");
         recreationalObject.fillIdentificationInformation("N12345678", "199612345670");
