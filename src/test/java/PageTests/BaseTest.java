@@ -120,7 +120,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
 
 //                Jenkins URL - Danish Office Laptop
-                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {
@@ -160,7 +160,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
 
 //                Jenkins URL - Danish Office Laptop
-                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
             }
             else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
             {
