@@ -15,7 +15,6 @@ public class LoginTest extends BaseTest {
     public void adminLoginTest1() throws InterruptedException {
         loginObject = new LoginObject(driver);
         loginObject.adminLogin("admin.utm","UTMe&@2024#$");
-        Assert.assertEquals(null, driver.findElement(By.id("loginerror"));
     }
 
     @Test
