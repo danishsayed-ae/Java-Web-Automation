@@ -51,9 +51,9 @@ public class WebElementsInteractions {
     }
 
     public void uploadFile(By locator, String filePath) {
-        WebElement uploadfile = driver.findElement(locator);
-        uploadfile.click();
-        StringSelection uploadDocument = new StringSelection(filePath);
+        WebElement uploadFileLocator = driver.findElement(locator);
+        uploadFileLocator.click();
+        StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\"+filePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(uploadDocument, null);
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);

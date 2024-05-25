@@ -13,7 +13,7 @@ public class RecreationalTest extends BaseTest{
         recreationalObject.fillIdentificationInformation("N12345678", "199612345670");
         recreationalObject.fillAccountInformation("danishsayed1@yopmail.com", "567998098", "567998098", "Test@1234");
         recreationalObject.fillDeclarationOfInformation();
-//        recreationalObject.uploadAttachments();
+        recreationalObject.uploadAttachments("Operator Passport.pdf", "Visa Copy.pdf", "Drone Operator Photograph.jpg", "Operator Emirates ID.pdf");
         recreationalObject.checkTermsAndConditions();
     }
 }
