@@ -13,20 +13,20 @@ public class LoginTest extends BaseTest {
     @Test
     public void adminLoginTest1() throws InterruptedException {
         loginPage = new LoginPage(driver);
-        loginPage.adminLogin("admin.utm","UTMe&@2024#$");
+        loginPage.adminLogin("admin.utm","");
     }
 
     @Test
     public void adminLoginTest2() throws InterruptedException {
         loginPage = new LoginPage(driver);
-        loginPage.adminLogin("admin","UTMe&@2024#$");
+        loginPage.adminLogin("admin","");
         Assert.assertEquals("Login", driver.getTitle());
     }
 
     @Test
     public void adminLoginTest3() throws InterruptedException {
         loginPage = new LoginPage(driver);
-        loginPage.adminLogin("admin.utm","UTMe&@2024");
+        loginPage.adminLogin("admin.utm","");
         Assert.assertEquals("Login", driver.getTitle());
     }
 
