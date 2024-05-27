@@ -1,6 +1,8 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import org.openqa.selenium.By;
@@ -10,6 +12,7 @@ public class LoginTest extends BaseTest {
     @Test  (priority = 3)
     public void testPositiveFlow() {
         LoginPage loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
         loginPage.userLogin("t.p1@yopmail.com", "Test@1234");
 
         // Add your assertion here for successful login

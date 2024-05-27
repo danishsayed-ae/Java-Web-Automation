@@ -1,0 +1,6 @@
+2024-05-27 22:59:33 [TestNG-tests-1] INFO  BaseTest:62 - Browser name is: chrome
+2024-05-27 22:59:33 [TestNG-tests-2] INFO  BaseTest:62 - Browser name is: edge
+2024-05-27 22:59:51 [TestNG-tests-1] INFO  BaseTest:62 - Browser name is: chrome
+2024-05-27 22:59:53 [TestNG-tests-2] INFO  BaseTest:62 - Browser name is: edge
+2024-05-27 23:00:09 [TestNG-tests-1] INFO  BaseTest:62 - Browser name is: chrome
+2024-05-27 23:00:12 [TestNG-tests-2] INFO  BaseTest:62 - Browser name is: edge
