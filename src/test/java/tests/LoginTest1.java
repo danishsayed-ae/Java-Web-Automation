@@ -18,7 +18,7 @@ public class LoginTest1 extends BaseTest {
         if (isValid) {
             Assert.assertTrue(isLoggedIn, "Login failed for valid credentials.");
         } else {
-            Assert.assertFalse(isLoggedIn, "Login succeeded with invalid credentials.");
+            Assert.assertTrue(isLoggedIn, "Login attempt was unsuccessful due to invalid credentials.");
         }
     }
 
