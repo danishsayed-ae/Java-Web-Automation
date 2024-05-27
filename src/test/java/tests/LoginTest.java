@@ -12,7 +12,6 @@ public class LoginTest extends BaseTest {
     @Test  (priority = 3)
     public void testPositiveFlow() {
         LoginPage loginPage = new LoginPage(driver);
-        driver.manage().window().maximize();
         loginPage.userLogin("t.p1@yopmail.com", "Test@1234");
 
         // Add your assertion here for successful login
