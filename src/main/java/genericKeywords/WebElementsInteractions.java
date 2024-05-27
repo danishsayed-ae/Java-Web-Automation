@@ -25,7 +25,7 @@ public class WebElementsInteractions {
     public WebElementsInteractions() {
     }
 
-    //These are custom created function that helps us to build keyword driven strategy
+    // These are custom created function that helps us to build keyword driven strategy
     public void clickElement(By locator) {
         driver.findElement(locator).click();
     }
@@ -42,8 +42,12 @@ public class WebElementsInteractions {
         return driver.findElement(locator).getText();
     }
 
-    public void threadSleep() throws InterruptedException {
-        Thread.sleep(1000);
+    public void timeout3Seconds() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void scrollDown() {
@@ -62,6 +66,6 @@ public class WebElementsInteractions {
     }
 
     public void waitForElement(By locator) {
-
+//        To write a explicit wait
     }
 }
