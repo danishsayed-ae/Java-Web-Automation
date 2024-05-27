@@ -13,7 +13,6 @@ public class LoginTest extends BaseTest {
         loginPage.userLogin("t.p1@yopmail.com", "Test@1234");
 
         // Add your assertion here for successful login
-        // Example:
         boolean isLoggedIn = driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed();
         Assert.assertTrue(isLoggedIn, "Login failed for valid credentials.");
     }

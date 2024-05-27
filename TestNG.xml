@@ -20,7 +20,7 @@
 <!--        </classes>-->
 <!--    </test>-->
     <test name="Test 4">
-        <parameter name="browserName" value="firefox"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="tests.LoginTest"/>
         </classes>
