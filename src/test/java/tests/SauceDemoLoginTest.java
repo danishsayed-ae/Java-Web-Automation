@@ -1,21 +1,21 @@
 package tests;
 
 import pages.SauceDemoLoginPage;
-import pages.ProductPageObject;
+import pages.SauceDemoProductPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
-public class LoginPageTest extends BaseTest {
+public class SauceDemoLoginTest extends BaseTest {
     SauceDemoLoginPage sauceDemoLoginPage;
-    ProductPageObject productPageObject;
+    SauceDemoProductPage sauceDemoProductPage;
 
-    private static final Logger logger = LogManager.getLogger(LoginPageTest.class);
+    private static final Logger logger = LogManager.getLogger(SauceDemoLoginTest.class);
 
     @Test
     public void userLoginTest() throws InterruptedException {
         sauceDemoLoginPage = new SauceDemoLoginPage(driver);
-        productPageObject = new ProductPageObject(driver);
+        sauceDemoProductPage = new SauceDemoProductPage(driver);
         sauceDemoLoginPage.userLogin("standard_user","secret_sauce");
     }
 }

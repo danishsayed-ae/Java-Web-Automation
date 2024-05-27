@@ -5,7 +5,7 @@ import pages.RecreationalSignUpPage;
 
 import java.time.Duration;
 
-public class RecreationalTest extends BaseTest{
+public class RecreationalSignUpTest extends BaseTest{
     RecreationalSignUpPage recreationalSignUpPage;
 
     @Test

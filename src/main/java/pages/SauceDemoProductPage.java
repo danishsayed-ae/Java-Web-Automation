@@ -4,12 +4,12 @@ import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductPageObject extends WebElementsInteractions {
+public class SauceDemoProductPage extends WebElementsInteractions {
     private final By productPageTitle = By.xpath("//span[@data-test='title']");
     private final By getFirstProductText = By.xpath("//a[@id='item_4_title_link']/div");
 
 
-    public ProductPageObject(WebDriver driver)
+    public SauceDemoProductPage(WebDriver driver)
     {
         this.driver = driver;
     }

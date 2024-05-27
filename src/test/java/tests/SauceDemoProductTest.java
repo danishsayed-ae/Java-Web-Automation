@@ -1,24 +1,24 @@
 package tests;
 
 import pages.SauceDemoLoginPage;
-import pages.ProductPageObject;
+import pages.SauceDemoProductPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
-public class ProductPageTest extends BaseTest{
+public class SauceDemoProductTest extends BaseTest{
     SauceDemoLoginPage sauceDemoLoginPage;
-    ProductPageObject productPageObject;
+    SauceDemoProductPage sauceDemoProductPage;
 
-    private static final Logger logger = LogManager.getLogger(ProductPageTest.class);
+    private static final Logger logger = LogManager.getLogger(SauceDemoProductTest.class);
 
     @Test
     public void testProductName() throws InterruptedException {
         sauceDemoLoginPage = new SauceDemoLoginPage(driver);
-        productPageObject = new ProductPageObject(driver);
+        sauceDemoProductPage = new SauceDemoProductPage(driver);
         sauceDemoLoginPage.userLogin("performance_glitch_user","secret_sauce");
         Thread.sleep(3000);
-        logger.info(productPageObject.getTitleOfPage());
-        logger.info(productPageObject.getProductName());
+        logger.info(sauceDemoProductPage.getTitleOfPage());
+        logger.info(sauceDemoProductPage.getProductName());
     }
 }
