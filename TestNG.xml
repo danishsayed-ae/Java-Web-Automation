@@ -4,25 +4,25 @@
 <!--    <test name="Test 1">-->
 <!--        <parameter name="browserName" value="chrome"/>-->
 <!--        <classes>-->
-<!--            <class name="pageTests.LoginPageTest"/>-->
+<!--            <class name="tests.LoginPageTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Test 2">-->
 <!--        <parameter name="browserName" value="firefox"/>-->
 <!--        <classes>-->
-<!--            <class name="pageTests.ProductPageTest"/>-->
+<!--            <class name="tests.ProductPageTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Test 3">-->
 <!--        <parameter name="browserName" value="edge"/>-->
 <!--        <classes>-->
-<!--            <class name="pageTests.ProductPageTest"/>-->
+<!--            <class name="tests.ProductPageTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
     <test name="Test 4">
         <parameter name="browserName" value="firefox"/>
         <classes>
-            <class name="pageTests.LoginTest"/>
+            <class name="tests.LoginTest"/>
         </classes>
     </test>
 </suite>

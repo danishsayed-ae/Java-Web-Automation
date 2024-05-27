@@ -1,10 +1,10 @@
-package pageObjects;
+package pages;
 
 import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPageObject extends WebElementsInteractions
+public class SauceDemoLoginPage extends WebElementsInteractions
 {
 //    We are declaring a private variable so that it cannot be accessed outside the LoginPageObject class
 //    We are declaring a final variable so that its value cannot be changed once assigned
@@ -13,7 +13,7 @@ public class LoginPageObject extends WebElementsInteractions
     private final By loginButton = By.id("login-button");
 
 //    We have created a constructor and the parameter driver is given life from the WebElementsInteractions class and this driver will be used in LoginPageTest
-    public LoginPageObject(WebDriver driver)
+    public SauceDemoLoginPage(WebDriver driver)
     {
         this.driver = driver;
     }

@@ -1,24 +1,22 @@
-package pageTests;
+package tests;
 
-import pageObjects.LoginPageObject;
-import pageObjects.ProductPageObject;
+import pages.SauceDemoLoginPage;
+import pages.ProductPageObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-
 public class ProductPageTest extends BaseTest{
-    LoginPageObject loginPageObject;
+    SauceDemoLoginPage sauceDemoLoginPage;
     ProductPageObject productPageObject;
 
     private static final Logger logger = LogManager.getLogger(ProductPageTest.class);
 
     @Test
     public void testProductName() throws InterruptedException {
-        loginPageObject = new LoginPageObject(driver);
+        sauceDemoLoginPage = new SauceDemoLoginPage(driver);
         productPageObject = new ProductPageObject(driver);
-        loginPageObject.userLogin("performance_glitch_user","secret_sauce");
+        sauceDemoLoginPage.userLogin("performance_glitch_user","secret_sauce");
         Thread.sleep(3000);
         logger.info(productPageObject.getTitleOfPage());
         logger.info(productPageObject.getProductName());

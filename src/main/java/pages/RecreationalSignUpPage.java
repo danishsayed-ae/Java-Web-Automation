@@ -1,13 +1,11 @@
-package pageObjects;
+package pages;
 
 import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import java.awt.*;
-
-public class RecreationalObject extends WebElementsInteractions {
+public class RecreationalSignUpPage extends WebElementsInteractions {
     private final String url = "https://uaelive.astrautm.com/up/pilot-register";
     private final By firstName = By.id("firstName");
     private final By lastName = By.id("lastName");
@@ -45,7 +43,7 @@ public class RecreationalObject extends WebElementsInteractions {
     private final By pilotTrainingCertificate = By.xpath("//label[@for='pilotTrainingCertificate']");
     private final By termsAndConditions = By.id("checkbox");
 
-    public RecreationalObject(WebDriver driver, JavascriptExecutor js) {
+    public RecreationalSignUpPage(WebDriver driver, JavascriptExecutor js) {
         this.driver = driver;
         this.js = js;
     }

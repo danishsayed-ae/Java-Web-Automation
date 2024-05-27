@@ -1,15 +1,15 @@
-package pageObjects;
+package pages;
 
 import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginObject extends WebElementsInteractions {
+public class LoginPage extends WebElementsInteractions {
     private final By userNameTextField = By.id("email");
     private final By passwordTextFiled = By.id("password");
     private final By loginButton = By.id("btnLgnSubmit");
 
-    public LoginObject(WebDriver driver)
+    public LoginPage(WebDriver driver)
     {
         this.driver = driver;
     }

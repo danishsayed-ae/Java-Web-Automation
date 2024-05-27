@@ -1,4 +1,4 @@
-package pageTests;
+package tests;
 
 import base.AppConstants;
 import base.BasePage;
@@ -28,7 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import static base.AppConstants.platform;
-import static utilities.ExtentReportHelper.getReport;
+import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
     protected WebDriver driver;

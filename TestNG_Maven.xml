@@ -4,13 +4,13 @@
 
     <test name="Test 1">
         <classes>
-            <class name="pageTests.LoginPageTest"/>
+            <class name="tests.LoginPageTest"/>
         </classes>
     </test>
 
     <test name="Test 2">
         <classes>
-            <class name="pageTests.ProductPageTest"/>
+            <class name="tests.ProductPageTest"/>
         </classes>
     </test>
 </suite>
