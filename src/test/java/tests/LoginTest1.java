@@ -11,6 +11,7 @@ public class LoginTest1 extends BaseTest {
     @Test(dataProvider = "loginData", dataProviderClass = LoginDataProvider.class, priority = 1)
     public void testLogin(String username, String password, boolean isValid) {
         LoginPage loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
         loginPage.userLogin(username, password);
 
         // Check login success or failure based on isValid flag
