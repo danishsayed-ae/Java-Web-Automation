@@ -10,7 +10,7 @@
 <!--    <test name="Firefox Tests">-->
 <!--        <parameter name="browserName" value="firefox"/>-->
 <!--        <classes>-->
-<!--            <class name="tests.LoginTest"/>-->
+<!--            <class name="tests.LoginTest1"/>-->
 <!--        </classes>-->
 <!--    </test>-->
     <test name="Edge Tests">
