@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends WebElementsInteractions {
 //    Locators
-    private final By changeLanguage = By.xpath("//button[contains(text(),'English')]");
+    private final By changeLanguageToEnglish = By.xpath("//button[contains(text(),'English')]");
     private final By userNameTextField = By.id("username");
     private final By passwordTextFiled = By.id("password");
     private final By loginButton = By.xpath("//button[@type='submit']");
@@ -21,7 +21,7 @@ public class LoginPage extends WebElementsInteractions {
     public void userLogin(String username, String password) {
         visitURL("https://stagingdsna.astrautm.com/");
         timeout3Seconds();
-        clickElement(changeLanguage);
+        clickElement(changeLanguageToEnglish);
         timeout3Seconds();
         sendText(userNameTextField, username);
         timeout3Seconds();
