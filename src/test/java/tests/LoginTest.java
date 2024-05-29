@@ -6,10 +6,10 @@ import pages.LoginPage;
 import org.openqa.selenium.By;
 
 public class LoginTest extends BaseTest {
+    LoginPage loginPage = new LoginPage(driver);
 
     @Test  (priority = 3)
     public void testPositiveFlow() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.userLogin("t.p1@yopmail.com", "Test@1234");
 
         // Add your assertion here for successful login
@@ -19,7 +19,6 @@ public class LoginTest extends BaseTest {
 
     @Test (priority = 1)
     public void testNegativeFlowIncorrectUsername() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.userLogin("ds@yopmail.com", "Test@1234");
 
         // Fail the test if login is successful
@@ -31,7 +30,6 @@ public class LoginTest extends BaseTest {
 
     @Test  (priority = 2)
     public void testNegativeFlowIncorrectPassword() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.userLogin("t.p1@yopmail.com", "Test@1");
 
         // Fail the test if login is successful
