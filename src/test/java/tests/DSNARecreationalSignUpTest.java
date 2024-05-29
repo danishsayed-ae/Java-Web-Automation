@@ -6,10 +6,9 @@ import pages.DSNARecreationalSignUpPage;
 
 public class DSNARecreationalSignUpTest extends BaseTest{
 
-
     @Test (dataProvider = "recreationalSignUpData", dataProviderClass = RecreationalSignUpDataProvider.class)
-    public void testPositiveFlow() {
+    public void testPositiveFlow(String firstName, String lastName, String email, String mobileNo, String password, String cpassword) {
         DSNARecreationalSignUpPage dsnaRecreationalSignUpPage = new DSNARecreationalSignUpPage(driver);
-//        dsnaRecreationalSignUpPage.userSignUp(firstName, lastName, email, mobileNo, password, cpassword);
+        dsnaRecreationalSignUpPage.performUserSignUp(firstName, lastName, email, mobileNo, password, cpassword);
     }
 }

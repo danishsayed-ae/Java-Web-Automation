@@ -18,7 +18,7 @@ public class LoginPage extends WebElementsInteractions {
     }
 
 //    Page Action
-    public void userLogin(String username, String password) {
+    public void performUserLogin(String username, String password) {
         visitURL("https://stagingdsna.astrautm.com/");
         timeout3Seconds();
         clickElement(changeLanguageToEnglish);

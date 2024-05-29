@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     @Test  (priority = 3)
     public void testPositiveFlow() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.userLogin("t.p1@yopmail.com", "Test@1234");
+        loginPage.performUserLogin("t.p1@yopmail.com", "Test@1234");
 
         // Add your assertion here for successful login
         boolean isLoggedIn = driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed();
@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
     @Test (priority = 1)
     public void testNegativeFlowIncorrectUsername() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.userLogin("ds@yopmail.com", "Test@1234");
+        loginPage.performUserLogin("ds@yopmail.com", "Test@1234");
 
         // Fail the test if login is successful
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
     @Test  (priority = 2)
     public void testNegativeFlowIncorrectPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.userLogin("t.p1@yopmail.com", "Test@1");
+        loginPage.performUserLogin("t.p1@yopmail.com", "Test@1");
 
         // Fail the test if login is successful
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));

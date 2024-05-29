@@ -22,7 +22,7 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
     }
 
 //    Page Action
-    public void userSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
+    public void performUserSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
         visitURL("https://stagingdsna.astrautm.com/pilot-register");
         clickElement(changeLanguageToEnglish);
         sendText(firstNameTextField, firstName);

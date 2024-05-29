@@ -12,7 +12,7 @@ public class LoginTest1 extends BaseTest {
     public void testLogin(String username, String password, boolean isValid) {
         LoginPage loginPage = new LoginPage(driver);
         driver.manage().window().maximize();
-        loginPage.userLogin(username, password);
+        loginPage.performUserLogin(username, password);
 
         // Check login success or failure based on isValid flag
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
