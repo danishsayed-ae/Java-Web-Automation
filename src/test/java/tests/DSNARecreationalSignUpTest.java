@@ -10,5 +10,6 @@ public class DSNARecreationalSignUpTest extends BaseTest{
     public void testPositiveFlow(String firstName, String lastName, String email, String mobileNo, String password, String cpassword) {
         DSNARecreationalSignUpPage dsnaRecreationalSignUpPage = new DSNARecreationalSignUpPage(driver);
         dsnaRecreationalSignUpPage.performUserSignUp(firstName, lastName, email, mobileNo, password, cpassword);
+
     }
 }
