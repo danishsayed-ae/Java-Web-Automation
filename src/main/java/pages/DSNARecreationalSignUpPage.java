@@ -31,7 +31,7 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         sendText(mobileNumberTextField, mobileNo);
         sendText(passwordTextField, password);
         sendText(confirmPasswordTextField, confirmPassword);
-        
+        waitForElementToBeClickable(termsAndConditions);
         clickElement(termsAndConditions);
         clickElement(loginButton);
     }

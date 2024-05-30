@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 
 public class WebElementsInteractions {
     protected WebDriver driver;
@@ -65,7 +68,15 @@ public class WebElementsInteractions {
         rb.keyRelease(KeyEvent.VK_ENTER);
     }
 
-    public void waitForElement(By locator) {
-//        To write a explicit wait
+    public void waitForElementToBeVisible(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        // Perform actions on the element
+    }
+
+    public void waitForElementToBeClickable(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        element.click();
     }
 }
