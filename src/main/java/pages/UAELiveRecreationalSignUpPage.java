@@ -43,9 +43,8 @@ public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
     private final By pilotTrainingCertificate = By.xpath("//label[@for='pilotTrainingCertificate']");
     private final By termsAndConditions = By.id("checkbox");
 
-    public UAELiveRecreationalSignUpPage(WebDriver driver, JavascriptExecutor js) {
-        this.driver = driver;
-        this.js = js;
+    public UAELiveRecreationalSignUpPage(WebDriver driver) {
+        super(driver);
     }
 
     public void fillApplicantInformation(String firstNameValue, String lastNameValue, String arabicFullNameValue, String arabicFamilyNameValue, String arabicAliasValue) {

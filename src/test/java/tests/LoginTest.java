@@ -1,7 +1,6 @@
 package tests;
 
 import data.LoginDataProvider;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -17,9 +16,9 @@ public class LoginTest extends BaseTest {
         // Assertion
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
         if (isLoggedIn) {
-            Assert.assertTrue(isLoggedIn, "Login failed for valid credentials.");
+            Assert.assertTrue(isLoggedIn, "Test failed: Login should be successful with valid credentials.");
         } else {
-            Assert.fail("Test failed intentionally: Login should not be successful with incorrect credentials.");
+            Assert.fail("Test failed intentionally: Login should not be successful with invalid credentials.");
         }
     }
 

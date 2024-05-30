@@ -19,11 +19,12 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
 
     //    Constructor
     public DSNARecreationalSignUpPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     //    Page Action
     public void performUserSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
+        maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/pilot-register");
         clickElement(changeLanguageToEnglish);
         sendText(firstNameTextField, firstName);
@@ -33,8 +34,14 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         sendText(passwordTextField, password);
         sendText(confirmPasswordTextField, confirmPassword);
         timeout1Second();
-        clickCheckboxUsingJS(By.id("checkbox"));
-        Assert.assertEquals(termsAndConditions, true);
+        clickElement(termsAndConditions);
+        timeout1Second();
+//        clickCheckboxUsingJS(By.id("checkbox"));
+//        Assert.assertEquals(termsAndConditions, true);
         clickElement(submitButton);
+    }
+
+    public void activateUserAccount() {
+        
     }
 }

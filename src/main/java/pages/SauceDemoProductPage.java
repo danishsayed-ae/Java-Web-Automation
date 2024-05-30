@@ -11,7 +11,7 @@ public class SauceDemoProductPage extends WebElementsInteractions {
 
     public SauceDemoProductPage(WebDriver driver)
     {
-        this.driver = driver;
+        super(driver);
     }
 
     public String getTitleOfPage()

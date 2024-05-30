@@ -15,7 +15,7 @@ public class SauceDemoLoginPage extends WebElementsInteractions
 //    We have created a constructor and the parameter driver is given life from the WebElementsInteractions class and this driver will be used in LoginPageTest
     public SauceDemoLoginPage(WebDriver driver)
     {
-        this.driver = driver;
+        super(driver);
     }
 
 //    We have created this method that expects two String parameters username and password

@@ -13,7 +13,7 @@ public class LoginPage extends WebElementsInteractions {
 
     //    Constructor
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     //    Page Action

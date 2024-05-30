@@ -16,6 +16,7 @@ public class WebElementsInteractions {
     protected WebDriver driver;
     protected JavascriptExecutor js = (JavascriptExecutor) driver;
     protected Robot rb;
+
     {
         try {
             rb = new Robot();
@@ -24,10 +25,13 @@ public class WebElementsInteractions {
         }
     }
 
-    public WebElementsInteractions() {
+    //    Constructor
+    public WebElementsInteractions(WebDriver driver) {
+        this.driver = driver;
+        this.js = (JavascriptExecutor) driver;
     }
 
-    // These are custom created function that helps us to build keyword driven strategy
+    //    Custom methods using Keyword Driven
     public void clickElement(By locator) {
         driver.findElement(locator).click();
     }
