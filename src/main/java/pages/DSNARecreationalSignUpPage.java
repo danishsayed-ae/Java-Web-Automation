@@ -3,6 +3,7 @@ package pages;
 import genericKeywords.WebElementsInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class DSNARecreationalSignUpPage extends WebElementsInteractions {
     //    Locators
@@ -14,14 +15,14 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
     private final By passwordTextField = By.id("password");
     private final By confirmPasswordTextField = By.id("cpassword");
     private final By termsAndConditions = By.id("checkbox");
-    private final By loginButton = By.xpath("//button[@type='submit']");
+    private final By submitButton = By.xpath("//button[@type='submit']");
 
-//    Constructor
+    //    Constructor
     public DSNARecreationalSignUpPage(WebDriver driver) {
         this.driver = driver;
     }
 
-//    Page Action
+    //    Page Action
     public void performUserSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
         visitURL("https://stagingdsna.astrautm.com/pilot-register");
         clickElement(changeLanguageToEnglish);
@@ -31,8 +32,9 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         sendText(mobileNumberTextField, mobileNo);
         sendText(passwordTextField, password);
         sendText(confirmPasswordTextField, confirmPassword);
-        waitForElementToBeClickable(termsAndConditions);
-        clickElement(termsAndConditions);
-        clickElement(loginButton);
+        timeout3Seconds();
+        clickCheckboxUsingJS();
+        Assert.assertEquals(termsAndConditions, true);
+        clickElement(submitButton);
     }
 }

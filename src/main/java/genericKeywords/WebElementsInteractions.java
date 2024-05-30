@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +34,12 @@ public class WebElementsInteractions {
         driver.findElement(locator).click();
     }
 
+    public void clickCheckboxUsingJS() {
+        WebElement checkbox = driver.findElement(By.id("checkbox"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", checkbox);
+    }
+
     public void sendText(By locator, String text) {
         driver.findElement(locator).sendKeys(text);
     }
@@ -60,7 +67,7 @@ public class WebElementsInteractions {
     public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
-        StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\"+filePath);
+        StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\" + filePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(uploadDocument, null);
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
