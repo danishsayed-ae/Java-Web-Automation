@@ -36,12 +36,10 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         timeout1Second();
         clickElement(termsAndConditions);
         timeout1Second();
-//        clickCheckboxUsingJS(By.id("checkbox"));
-//        Assert.assertEquals(termsAndConditions, true);
         clickElement(submitButton);
     }
 
     public void activateUserAccount() {
-        
+
     }
 }
