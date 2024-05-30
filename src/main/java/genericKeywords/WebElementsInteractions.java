@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 public class WebElementsInteractions {
     protected WebDriver driver;
@@ -79,6 +81,21 @@ public class WebElementsInteractions {
         rb.keyPress(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public void switchToChildWindow() {
+        // Get all the windows
+        Set<String> windows = driver.getWindowHandles();
+
+        // Iterator to iterate through all the windows
+        Iterator<String> iterator = windows.iterator();
+
+        // By default, iteration is at 0th index and when we do next then it moves to the 1st index.
+        String parentID = iterator.next(); // Storing 1st window in a variable
+        String childID = iterator.next();  // Storing 2nd window in a variable
+
+        // Switch to the child window
+        driver.switchTo().window(childID);
     }
 
     public void waitForElementToBeVisible(By locator) {

@@ -40,6 +40,7 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
     }
 
     public void activateUserAccount() {
+        switchToChildWindow();
 
     }
 }
