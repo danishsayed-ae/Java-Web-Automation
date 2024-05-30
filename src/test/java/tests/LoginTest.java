@@ -1,5 +1,7 @@
 package tests;
 
+import data.LoginDataProvider;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -7,38 +9,17 @@ import org.openqa.selenium.By;
 
 public class LoginTest extends BaseTest {
 
-
-    @Test  (priority = 3)
-    public void testPositiveFlow() {
+    @Test(dataProvider = "loginData", dataProviderClass = LoginDataProvider.class)
+    public void testUserLogin(String username, String password) {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.performUserLogin("t.p1@yopmail.com", "Test@1234");
+        loginPage.performUserLogin(username, password);
 
-        // Add your assertion here for successful login
-        boolean isLoggedIn = driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed();
-        Assert.assertTrue(isLoggedIn, "Login failed for valid credentials.");
-    }
-
-    @Test (priority = 1)
-    public void testNegativeFlowIncorrectUsername() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.performUserLogin("ds@yopmail.com", "Test@1234");
-
-        // Fail the test if login is successful
+        // Assertion
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
-        if (!isLoggedIn) {
-            Assert.fail("Test failed intentionally: Login should not be successful with incorrect username.");
-        }
-    }
-
-    @Test  (priority = 2)
-    public void testNegativeFlowIncorrectPassword() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.performUserLogin("t.p1@yopmail.com", "Test@1");
-
-        // Fail the test if login is successful
-        boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
-        if (!isLoggedIn) {
-            Assert.fail("Test failed intentionally: Login should not be successful with incorrect password.");
+        if (isLoggedIn) {
+            Assert.assertTrue(isLoggedIn, "Login failed for valid credentials.");
+        } else {
+            Assert.fail("Test failed intentionally: Login should not be successful with incorrect credentials.");
         }
     }
 

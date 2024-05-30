@@ -1,7 +1,6 @@
 package tests;
 
 import data.RecreationalSignUpDataProvider;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pages.DSNARecreationalSignUpPage;
 

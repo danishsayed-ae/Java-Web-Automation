@@ -18,15 +18,16 @@ public class LoginPage extends WebElementsInteractions {
 
     //    Page Action
     public void performUserLogin(String username, String password) {
+        maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/");
-        timeout3Seconds();
+//        timeout1Second();
         clickElement(changeLanguageToEnglish);
-        timeout3Seconds();
+//        timeout1Second();
         sendText(userNameTextField, username);
-        timeout3Seconds();
+//        timeout1Second();
         sendText(passwordTextFiled, password);
-        timeout3Seconds();
+//        timeout1Second();
         clickElement(loginButton);
-        timeout3Seconds();
+        timeout1Second();
     }
 }

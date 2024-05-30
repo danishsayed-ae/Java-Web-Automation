@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,7 +16,6 @@ public class WebElementsInteractions {
     protected WebDriver driver;
     protected JavascriptExecutor js = (JavascriptExecutor) driver;
     protected Robot rb;
-
     {
         try {
             rb = new Robot();
@@ -34,10 +32,14 @@ public class WebElementsInteractions {
         driver.findElement(locator).click();
     }
 
-    public void clickCheckboxUsingJS() {
-        WebElement checkbox = driver.findElement(By.id("checkbox"));
+    public void clickCheckboxUsingJS(By locator) {
+        WebElement checkbox = driver.findElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", checkbox);
+    }
+
+    public void maximizeWindow() {
+        driver.manage().window().maximize();
     }
 
     public void sendText(By locator, String text) {
@@ -52,9 +54,9 @@ public class WebElementsInteractions {
         return driver.findElement(locator).getText();
     }
 
-    public void timeout3Seconds() {
+    public void timeout1Second() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

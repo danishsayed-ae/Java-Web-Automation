@@ -32,8 +32,8 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         sendText(mobileNumberTextField, mobileNo);
         sendText(passwordTextField, password);
         sendText(confirmPasswordTextField, confirmPassword);
-        timeout3Seconds();
-        clickCheckboxUsingJS();
+        timeout1Second();
+        clickCheckboxUsingJS(By.id("checkbox"));
         Assert.assertEquals(termsAndConditions, true);
         clickElement(submitButton);
     }
