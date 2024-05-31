@@ -1,5 +1,8 @@
 package genericKeywords;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +13,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+
+import static org.apache.commons.io.FileUtils.readFileToString;
 
 public class WebElementsInteractions {
     protected WebDriver driver;
@@ -109,4 +118,18 @@ public class WebElementsInteractions {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
         element.click();
     }
-}
+
+//    public  JsonUtils {
+//
+//        public static List<LoginData> readLoginData(String filePath) {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            List<LoginData> loginDataList = null;
+//            try {
+//                loginDataList = objectMapper.readValue(new File(filePath),
+//                        objectMapper.getTypeFactory().constructCollectionType(List.class, LoginData.class));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return loginDataList;
+//        }
+    }

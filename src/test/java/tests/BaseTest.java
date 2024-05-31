@@ -8,7 +8,10 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,10 +26,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import static base.AppConstants.platform;
 import static utils.ExtentReportHelper.getReport;
 
@@ -214,5 +222,16 @@ public class BaseTest {
     public void flushTestReport()
     {
         extentReports.flush();
+    }
+
+    public List<Hashmap<Object, Object>> getJSONData() throws IOException {
+//        Reading JSON to String
+        String JSONContent = FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//src//main//java//data//loginTestData.json"), StandardCharsets.UTF_8);
+
+//        String to Hashmap
+        ObjectMapper objectMapper = new ObjectMapper();
+        List <Hashmap<Object, Object>> data = objectMapper.readValue(JSONContent, new TypeReference<List<Hashmap<Object, Object>>>() {
+        });
+        return data;
     }
 }
