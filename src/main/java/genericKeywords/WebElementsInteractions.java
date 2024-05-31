@@ -24,7 +24,8 @@ import java.util.Set;
 
 public class WebElementsInteractions {
     protected WebDriver driver;
-    protected JavascriptExecutor js = (JavascriptExecutor) driver;
+    protected JavascriptExecutor js;
+
     /*
     protected Robot rb;
 
@@ -36,6 +37,7 @@ public class WebElementsInteractions {
         }
     }
 */
+
     //    Constructor
     public WebElementsInteractions(WebDriver driver) {
         this.driver = driver;
@@ -45,12 +47,6 @@ public class WebElementsInteractions {
     //    Custom methods using Keyword Driven
     public void clickElement(By locator) {
         driver.findElement(locator).click();
-    }
-
-    public void clickCheckboxUsingJS(By locator) {
-        WebElement checkbox = driver.findElement(locator);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", checkbox);
     }
 
     public void maximizeWindow() {
