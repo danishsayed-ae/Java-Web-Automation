@@ -22,11 +22,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import static org.apache.commons.io.FileUtils.readFileToString;
-
 public class WebElementsInteractions {
     protected WebDriver driver;
     protected JavascriptExecutor js = (JavascriptExecutor) driver;
+    /*
     protected Robot rb;
 
     {
@@ -36,7 +35,7 @@ public class WebElementsInteractions {
             throw new RuntimeException(e);
         }
     }
-
+*/
     //    Constructor
     public WebElementsInteractions(WebDriver driver) {
         this.driver = driver;
@@ -82,7 +81,7 @@ public class WebElementsInteractions {
         js.executeScript("window.scrollBy(0,300)");
     }
 
-    public void uploadFile(By locator, String filePath) {
+/*    public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
         StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\" + filePath);
@@ -91,7 +90,7 @@ public class WebElementsInteractions {
         rb.keyPress(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-    }
+    }*/
 
     public void switchToChildWindow() {
         // Get all the windows
