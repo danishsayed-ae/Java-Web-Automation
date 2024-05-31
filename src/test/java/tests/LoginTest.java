@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "loginData", dataProviderClass = LoginDataProvider.class)
+    @Test(dataProvider = "loginDataFromJson", dataProviderClass = LoginDataProvider.class)
     public void testUserLogin(String username, String password) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.performUserLogin(username, password);

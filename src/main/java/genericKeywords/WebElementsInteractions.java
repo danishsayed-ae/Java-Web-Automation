@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -119,17 +120,14 @@ public class WebElementsInteractions {
         element.click();
     }
 
-//    public  JsonUtils {
-//
-//        public static List<LoginData> readLoginData(String filePath) {
-//            ObjectMapper objectMapper = new ObjectMapper();
-//            List<LoginData> loginDataList = null;
-//            try {
-//                loginDataList = objectMapper.readValue(new File(filePath),
-//                        objectMapper.getTypeFactory().constructCollectionType(List.class, LoginData.class));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return loginDataList;
-//        }
+    public List<HashMap<Object, Object>> getJSONData(String filePath) throws IOException {
+        // Reading JSON to String
+        String JSONContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+
+        // String to Hashmap
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(JSONContent, new TypeReference<List<HashMap<Object, Object>>>() {
+        });
     }
+
+}

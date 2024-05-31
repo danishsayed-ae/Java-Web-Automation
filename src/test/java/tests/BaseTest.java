@@ -48,7 +48,7 @@ public class BaseTest {
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-//    It helps us to create independent thread
+    //    It helps us to create independent thread
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
@@ -59,26 +59,19 @@ public class BaseTest {
 
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
-        if (browserName!=null)
-        {
+        if (browserName != null) {
             browser = browserName;
-        }
-        else
-        {
+        } else {
             browser = AppConstants.browserName;
         }
-        logger.info("Browser name is: " +browser);
+        logger.info("Browser name is: " + browser);
 
-        if(browser.equalsIgnoreCase("chrome"))
-        {
-            if(AppConstants.platform.equalsIgnoreCase("local"))
-            {
+        if (browser.equalsIgnoreCase("chrome")) {
+            if (AppConstants.platform.equalsIgnoreCase("local")) {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-            }
-            else if (AppConstants.platform.equalsIgnoreCase("remote"))
-            {
+            } else if (AppConstants.platform.equalsIgnoreCase("remote")) {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
@@ -95,32 +88,22 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
 
                 driver = new RemoteWebDriver(new URL("http://172.30.144.1:4444/wd/hub"), co);
-            }
-            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
-            {
+            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
                 co.addArguments("--headless");//For GitHub Actions
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
                 WebDriverManager.chromedriver().setup();
 //                co.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(co);
-            }
-            else
-            {
+            } else {
                 logger.error(platform + "This platform is not supported!");
             }
-        }
-
-        else if (browser.equalsIgnoreCase("firefox"))
-        {
-            if(platform.equalsIgnoreCase("local"))
-            {
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            if (platform.equalsIgnoreCase("local")) {
 //                fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
-            }
-            else if (platform.equalsIgnoreCase("remote"))
-            {
+            } else if (platform.equalsIgnoreCase("remote")) {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 //                Docker-Compose_Grid URL
@@ -136,32 +119,22 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
 
                 driver = new RemoteWebDriver(new URL("http://172.30.144.1:4444/wd/hub"), fo);
-            }
-            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
-            {
+            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
                 fo.addArguments("--headless");//For GitHub Actions
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
                 WebDriverManager.firefoxdriver().setup();
 //                fo.addArguments("--remote-allow-origins=*");
                 driver = new FirefoxDriver(fo);
-            }
-            else
-            {
+            } else {
                 logger.error(platform + "This platform is not supported!");
             }
-        }
-
-        else if (browser.equalsIgnoreCase("edge"))
-        {
-            if(platform.equalsIgnoreCase("local"))
-            {
+        } else if (browser.equalsIgnoreCase("edge")) {
+            if (platform.equalsIgnoreCase("local")) {
 //                eo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
-            }
-            else if (platform.equalsIgnoreCase("remote"))
-            {
+            } else if (platform.equalsIgnoreCase("remote")) {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
@@ -178,60 +151,54 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
 
                 driver = new RemoteWebDriver(new URL("http://172.30.144.1:4444/wd/hub"), eo);
-            }
-            else if (AppConstants.platform.equalsIgnoreCase("remote_git"))
-            {
+            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
                 eo.addArguments("--headless");//For GitHub Actions
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
                 WebDriverManager.edgedriver().setup();
 //                eo.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(eo);
-            }
-            else
-            {
+            } else {
                 logger.error(platform + "This platform is not supported!");
             }
-        }
-        else
-        {
+        } else {
             logger.info("Browser name is not supported!");
         }
         ExtentTest extentTest = extentReports.createTest(iTestResult.getMethod().getMethodName());
         testLogger.set(extentTest);
-        testLogger.get().log(Status.INFO, "Driver Start Time: "+ LocalDateTime.now());
+        testLogger.get().log(Status.INFO, "Driver Start Time: " + LocalDateTime.now());
     }
 
     @AfterMethod
     public void tearDownTest(ITestResult iTestResult) throws IOException {
-        if (iTestResult.isSuccess())
-        {
-            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName()+ " is successfully passed.", ExtentColor.GREEN));
-        }
-        else
-        {
-            testLogger.get().log(Status.FAIL, "Test is failed due to: "+iTestResult.getThrowable());
-            String screenshot = BasePage.getScreenshot(iTestResult.getMethod().getMethodName()+".jpg", driver);
+        if (iTestResult.isSuccess()) {
+            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName() + " is successfully passed.", ExtentColor.GREEN));
+        } else {
+            testLogger.get().log(Status.FAIL, "Test is failed due to: " + iTestResult.getThrowable());
+            String screenshot = BasePage.getScreenshot(iTestResult.getMethod().getMethodName() + ".jpg", driver);
             testLogger.get().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(BasePage.convertImg_Base64(screenshot)).build());
-            testLogger.get().log(Status.INFO, "Driver End Time: "+LocalDateTime.now());
+            testLogger.get().log(Status.INFO, "Driver End Time: " + LocalDateTime.now());
         }
         driver.quit();
     }
 
     @AfterClass
-    public void flushTestReport()
-    {
+    public void flushTestReport() {
         extentReports.flush();
     }
 
+/*
+    //    Rahul Shetty code
     public List<Hashmap<Object, Object>> getJSONData() throws IOException {
 //        Reading JSON to String
-        String JSONContent = FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//src//main//java//data//loginTestData.json"), StandardCharsets.UTF_8);
+        String JSONContent = FileUtils.readFileToString(new File(System.getProperty("user.dir") + "//src//main//java//data//loginTestData.json"), StandardCharsets.UTF_8);
 
 //        String to Hashmap
         ObjectMapper objectMapper = new ObjectMapper();
-        List <Hashmap<Object, Object>> data = objectMapper.readValue(JSONContent, new TypeReference<List<Hashmap<Object, Object>>>() {
+        List<Hashmap<Object, Object>> data = objectMapper.readValue(JSONContent, new TypeReference<List<Hashmap<Object, Object>>>() {
         });
         return data;
     }
+    */
+
 }
