@@ -55,8 +55,7 @@ public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
         sendText(arabicFamilyName, arabicFamilyNameValue);
         sendText(arabicAlias, arabicAliasValue);
         clickElement(dateOfBirth);
-//        scrollDown();
-//        js.executeScript("window.scrollBy(0,300)");
+        scrollDown();
         clickElement(placeOfBirth);
         clickElement(placeOfBirthValue);
         clickElement(gender);
@@ -78,13 +77,13 @@ public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
 
     public void fillAccountInformation(String emailIdValue, String mobileNumberValue, String phoneNumberValue, String passwordValue) {
         clickElement(accountInformation);
-//        scrollDown();
+        scrollDown();
         sendText(emailId, emailIdValue);
         sendText(mobileNumber, mobileNumberValue);
         sendText(phoneNumber, phoneNumberValue);
         sendText(password, passwordValue);
         sendText(confirmPassword, passwordValue);
-//        scrollDown();
+        scrollDown();
     }
 
     public void fillDeclarationOfInformation() {
@@ -92,15 +91,16 @@ public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
         clickElement(stateCodeValue);
         clickElement(cityCode);
         clickElement(cityCodeValue);
-//        scrollDown();
+        scrollDown();
     }
-//
-//    public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {
-//        uploadFile(passport, passportPath);
-//        uploadFile(visaCopy, visaCopyPath);
-//        uploadFile(applicantPhoto, applicantPhotoPath);
-//        uploadFile(emiratesID, emiratesIDPath);
-//    }
+/*
+    public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {
+        uploadFile(passport, passportPath);
+        uploadFile(visaCopy, visaCopyPath);
+        uploadFile(applicantPhoto, applicantPhotoPath);
+        uploadFile(emiratesID, emiratesIDPath);
+    }
+*/
 
     public void checkTermsAndConditions() {
         clickElement(termsAndConditions);
