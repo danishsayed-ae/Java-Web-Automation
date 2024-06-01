@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -76,6 +77,20 @@ public class WebElementsInteractions {
     public void scrollDown() {
         js.executeScript("window.scrollBy(0,300)");
     }
+
+    public void selectDropdownByVisibleText(By locator, String value) {
+        Select dropdown = new Select(driver.findElement(locator));
+        dropdown.selectByVisibleText(value);
+    }
+
+    public void selectCheckbox(By locator, boolean value) {
+        WebElement checkbox = driver.findElement(locator);
+        if (checkbox.isSelected() != value) {
+            checkbox.click();
+        }
+    }
+
+
 
 /*    public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
