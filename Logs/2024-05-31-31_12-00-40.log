@@ -1,0 +1,9 @@
+2024-05-31 12:00:41 [TestNG-tests-3] INFO  BaseTest:67 - Browser name is: edge
+2024-05-31 12:00:41 [TestNG-tests-1] INFO  BaseTest:67 - Browser name is: chrome
+2024-05-31 12:00:41 [TestNG-tests-2] INFO  BaseTest:67 - Browser name is: firefox
+2024-05-31 12:00:49 [TestNG-tests-1] INFO  BaseTest:67 - Browser name is: chrome
+2024-05-31 12:00:52 [TestNG-tests-3] INFO  BaseTest:67 - Browser name is: edge
+2024-05-31 12:00:53 [TestNG-tests-1] INFO  BaseTest:67 - Browser name is: chrome
+2024-05-31 12:00:54 [TestNG-tests-2] INFO  BaseTest:67 - Browser name is: firefox
+2024-05-31 12:00:57 [TestNG-tests-3] INFO  BaseTest:67 - Browser name is: edge
+2024-05-31 12:01:01 [TestNG-tests-2] INFO  BaseTest:67 - Browser name is: firefox
