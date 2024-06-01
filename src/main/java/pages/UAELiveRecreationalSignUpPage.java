@@ -94,13 +94,13 @@ public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
         clickElement(cityCodeValue);
 //        scrollDown();
     }
-
-    public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {
-        uploadFile(passport, passportPath);
-        uploadFile(visaCopy, visaCopyPath);
-        uploadFile(applicantPhoto, applicantPhotoPath);
-        uploadFile(emiratesID, emiratesIDPath);
-    }
+//
+//    public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {
+//        uploadFile(passport, passportPath);
+//        uploadFile(visaCopy, visaCopyPath);
+//        uploadFile(applicantPhoto, applicantPhotoPath);
+//        uploadFile(emiratesID, emiratesIDPath);
+//    }
 
     public void checkTermsAndConditions() {
         clickElement(termsAndConditions);

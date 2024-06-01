@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -22,11 +23,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import static org.apache.commons.io.FileUtils.readFileToString;
-
 public class WebElementsInteractions {
     protected WebDriver driver;
-    protected JavascriptExecutor js = (JavascriptExecutor) driver;
+    protected JavascriptExecutor js;
+
+    /*
     protected Robot rb;
 
     {
@@ -36,6 +37,7 @@ public class WebElementsInteractions {
             throw new RuntimeException(e);
         }
     }
+*/
 
     //    Constructor
     public WebElementsInteractions(WebDriver driver) {
@@ -46,12 +48,6 @@ public class WebElementsInteractions {
     //    Custom methods using Keyword Driven
     public void clickElement(By locator) {
         driver.findElement(locator).click();
-    }
-
-    public void clickCheckboxUsingJS(By locator) {
-        WebElement checkbox = driver.findElement(locator);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", checkbox);
     }
 
     public void maximizeWindow() {
@@ -82,7 +78,21 @@ public class WebElementsInteractions {
         js.executeScript("window.scrollBy(0,300)");
     }
 
-    public void uploadFile(By locator, String filePath) {
+    public void selectDropdownByVisibleText(By locator, String value) {
+        Select dropdown = new Select(driver.findElement(locator));
+        dropdown.selectByVisibleText(value);
+    }
+
+    public void selectCheckbox(By locator, boolean value) {
+        WebElement checkbox = driver.findElement(locator);
+        if (checkbox.isSelected() != value) {
+            checkbox.click();
+        }
+    }
+
+
+
+/*    public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
         StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\" + filePath);
@@ -91,7 +101,7 @@ public class WebElementsInteractions {
         rb.keyPress(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-    }
+    }*/
 
     public void switchToChildWindow() {
         // Get all the windows
