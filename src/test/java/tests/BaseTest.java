@@ -186,19 +186,4 @@ public class BaseTest {
     public void flushTestReport() {
         extentReports.flush();
     }
-
-/*
-    //    Rahul Shetty code
-    public List<Hashmap<Object, Object>> getJSONData() throws IOException {
-//        Reading JSON to String
-        String JSONContent = FileUtils.readFileToString(new File(System.getProperty("user.dir") + "//src//main//java//data//loginTestData.json"), StandardCharsets.UTF_8);
-
-//        String to Hashmap
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Hashmap<Object, Object>> data = objectMapper.readValue(JSONContent, new TypeReference<List<Hashmap<Object, Object>>>() {
-        });
-        return data;
-    }
-    */
-
 }
