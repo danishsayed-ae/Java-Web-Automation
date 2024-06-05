@@ -26,7 +26,7 @@ public class LoginPage extends WebElementsInteractions {
         sendText(userNameTextField, username);
 //        timeout1Second();
         sendText(passwordTextFiled, password);
-//        timeout1Second();
+        timeout1Second();
         clickElement(loginButton);
         timeout1Second();
     }
