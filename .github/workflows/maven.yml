@@ -41,6 +41,7 @@ jobs:
         mvn clean test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
+        -Dplatform=remote_git
         -Dmaven.test.failure.ignore=true
 
 #Report Generation
