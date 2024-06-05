@@ -1,4 +1,4 @@
-package data;
+package dataProvider;
 
 //import genericKeywords.WebElementsInteractions;
 
@@ -23,7 +23,7 @@ public class LoginDataProvider {
     @DataProvider(name = "loginDataFromJson")
     public Object[][] loginDataFromJson() throws IOException {
         WebElementsInteractions webElementsInteractions = new WebElementsInteractions(null); // Initialize with null driver for utility purpose
-        List<HashMap<Object, Object>> loginDataList = webElementsInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/data/loginTestData.json");
+        List<HashMap<Object, Object>> loginDataList = webElementsInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/testData/loginTestData.json");
 
         Object[][] data = new Object[loginDataList.size()][2];
         for (int i = 0; i < loginDataList.size(); i++) {

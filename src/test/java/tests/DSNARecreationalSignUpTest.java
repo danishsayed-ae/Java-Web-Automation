@@ -1,6 +1,6 @@
 package tests;
 
-import data.RecreationalSignUpDataProvider;
+import dataProvider.RecreationalSignUpDataProvider;
 import org.testng.annotations.Test;
 import pages.DSNARecreationalSignUpPage;
 
