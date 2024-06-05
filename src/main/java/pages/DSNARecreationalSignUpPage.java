@@ -22,7 +22,7 @@ public class DSNARecreationalSignUpPage extends WebElementsInteractions {
         super(driver);
     }
 
-    //    Page Action
+    //    Page Action Method
     public void performUserSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
         maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/pilot-register");
