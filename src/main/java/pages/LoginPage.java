@@ -8,7 +8,7 @@ public class LoginPage extends WebElementsInteractions {
     //    Locators
     private final By changeLanguageToEnglish = By.xpath("//button[contains(text(),'English')]");
     private final By userNameTextField = By.id("username");
-    private final By passwordTextFiled = By.id("password");
+    private final By passwordTextField = By.id("password");
     private final By loginButton = By.xpath("//button[@type='submit']");
 
     //    Constructor
@@ -25,7 +25,7 @@ public class LoginPage extends WebElementsInteractions {
 //        timeout1Second();
         sendText(userNameTextField, username);
 //        timeout1Second();
-        sendText(passwordTextFiled, password);
+        sendText(passwordTextField, password);
         timeout1Second();
         clickElement(loginButton);
         timeout1Second();
