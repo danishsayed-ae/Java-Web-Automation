@@ -60,6 +60,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
+//        Added a condition to check if we are receiving browserName from TestNG.xml file.
         if (browserName != null) {
             browser = browserName;
         } else {
