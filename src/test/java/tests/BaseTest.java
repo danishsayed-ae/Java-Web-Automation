@@ -1,6 +1,6 @@
 package tests;
 
-import base.AppConstants;
+import base.DefaultConfiguration;
 import base.BasePage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,13 +8,9 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,15 +23,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.util.List;
 
-import static base.AppConstants.platform;
+import static base.DefaultConfiguration.platform;
 import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
@@ -58,25 +51,25 @@ public class BaseTest {
 //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
-//    Using "BeforeMethod" annotation by TestNG to setup the test
+//    Using "BeforeMethod" annotation by TestNG to setup the test environment
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
 //        Added a condition to check if we are receiving browserName from TestNG.xml file
         if (browserName != null) {
             browser = browserName;
         } else {
-            browser = AppConstants.browserName;
+            browser = DefaultConfiguration.browserName;
         }
 //        Printing the browserName for each execution
         logger.info("Browser name is: " + browser);
 
 //        Added this condition to execute the tests using parameters from Maven Surefire plugin
         if (browser.equalsIgnoreCase("chrome")) {
-            if (AppConstants.platform.equalsIgnoreCase("local")) {
+            if (DefaultConfiguration.platform.equalsIgnoreCase("local")) {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-            } else if (AppConstants.platform.equalsIgnoreCase("remote")) {
+            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote")) {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
@@ -93,7 +86,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
 
 
-            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
+            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
@@ -127,7 +120,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
 
 
-            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
+            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 fo.addArguments("--headless");//For GitHub Actions
                 fo.addArguments("--disable-gpu");
@@ -162,7 +155,7 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
 
 
-            } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
+            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
@@ -181,10 +174,11 @@ public class BaseTest {
         testLogger.get().log(Status.INFO, "Driver Start Time: " + LocalDateTime.now());
     }
 
+//    Using "AfterMethod" annotation by TestNG to teardown the test environment
     @AfterMethod
     public void tearDownTest(ITestResult iTestResult) throws IOException {
         if (iTestResult.isSuccess()) {
-            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName() + " is successfully passed.", ExtentColor.GREEN));
+            testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName() + " passed successfully.", ExtentColor.GREEN));
         } else {
             testLogger.get().log(Status.FAIL, "Test is failed due to: " + iTestResult.getThrowable());
             String screenshot = BasePage.getScreenshot(iTestResult.getMethod().getMethodName() + ".jpg", driver);
