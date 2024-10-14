@@ -48,13 +48,14 @@ public class BaseTest {
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-    //    It helps us to create independent thread
+//    It helps us to create independent thread
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
 
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
+//    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
     @BeforeMethod
