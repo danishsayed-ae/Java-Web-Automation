@@ -41,10 +41,9 @@ import static utils.ExtentReportHelper.getReport;
 public class BaseTest {
 //    Initializing objects
     protected WebDriver driver;
-    protected JavascriptExecutor js;
     protected String browser;
 
-
+//    Initializing objects for each browser class
     ChromeOptions co = new ChromeOptions();
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
