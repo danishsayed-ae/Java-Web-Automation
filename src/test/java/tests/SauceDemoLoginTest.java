@@ -10,6 +10,7 @@ public class SauceDemoLoginTest extends BaseTest {
     SauceDemoLoginPage sauceDemoLoginPage;
     SauceDemoProductPage sauceDemoProductPage;
 
+//    It can be used to capture the logs for this class during execution
     private static final Logger logger = LogManager.getLogger(SauceDemoLoginTest.class);
 
     @Test

@@ -32,23 +32,23 @@ import static configuration.DefaultConfiguration.platform;
 import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
-//    Initializing objects
+    //    Initializing objects
     protected WebDriver driver;
     protected String browser;
 
-//    Initializing objects for each browser class
+    //    Initializing objects for each browser class
     ChromeOptions co = new ChromeOptions();
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-//    It helps us to create independent thread
+    //    It helps us to create independent thread during execution
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
 
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
-//    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
+    //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
 //    Using "BeforeMethod" annotation by TestNG to setup the test environment
@@ -169,15 +169,20 @@ public class BaseTest {
         } else {
             logger.info("Browser name is not supported!");
         }
+
+//        It will capture the method name of every test execution
         ExtentTest extentTest = extentReports.createTest(iTestResult.getMethod().getMethodName());
+//        It will set the test in the Thread Local
         testLogger.set(extentTest);
         testLogger.get().log(Status.INFO, "Driver Start Time: " + LocalDateTime.now());
     }
 
-//    Using "AfterMethod" annotation by TestNG to teardown the test environment
+    //    Using "AfterMethod" annotation by TestNG to teardown the test environment
     @AfterMethod
     public void tearDownTest(ITestResult iTestResult) throws IOException {
+//        We will capture the test execution result before we quit the browser
         if (iTestResult.isSuccess()) {
+//            Markup helps to beautify the result by adding a label and color to it
             testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName() + " passed successfully.", ExtentColor.GREEN));
         } else {
             testLogger.get().log(Status.FAIL, "Test is failed due to: " + iTestResult.getThrowable());
