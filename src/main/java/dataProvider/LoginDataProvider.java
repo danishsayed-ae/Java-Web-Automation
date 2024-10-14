@@ -1,8 +1,7 @@
 package dataProvider;
 
-//import genericKeywords.WebElementsInteractions;
 
-import genericKeywords.WebElementsInteractions;
+import keywords.CommonInteractions;
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
@@ -22,8 +21,8 @@ public class LoginDataProvider {
 
     @DataProvider(name = "loginDataFromJson")
     public Object[][] loginDataFromJson() throws IOException {
-        WebElementsInteractions webElementsInteractions = new WebElementsInteractions(null); // Initialize with null driver for utility purpose
-        List<HashMap<Object, Object>> loginDataList = webElementsInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/testData/loginTestData.json");
+        CommonInteractions commonInteractions = new CommonInteractions(null); // Initialize with null driver for utility purpose
+        List<HashMap<Object, Object>> loginDataList = commonInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/testData/loginTestData.json");
 
         Object[][] data = new Object[loginDataList.size()][2];
         for (int i = 0; i < loginDataList.size(); i++) {

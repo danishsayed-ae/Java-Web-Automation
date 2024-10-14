@@ -1,10 +1,10 @@
 package pages;
 
-import genericKeywords.WebElementsInteractions;
+import keywords.CommonInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends WebElementsInteractions {
+public class LoginPage extends CommonInteractions {
     //    Locators
     private final By changeLanguageToEnglish = By.xpath("//button[contains(text(),'English')]");
     private final By userNameTextField = By.id("username");
