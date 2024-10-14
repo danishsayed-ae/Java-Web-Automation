@@ -58,16 +58,19 @@ public class BaseTest {
 //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
+//    Using "BeforeMethod" annotation by TestNG to setup the test
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
-//        Added a condition to check if we are receiving browserName from TestNG.xml file.
+//        Added a condition to check if we are receiving browserName from TestNG.xml file
         if (browserName != null) {
             browser = browserName;
         } else {
             browser = AppConstants.browserName;
         }
+//        Printing the browserName for each execution
         logger.info("Browser name is: " + browser);
 
+//        Added this condition to execute the tests using parameters from Maven Surefire plugin
         if (browser.equalsIgnoreCase("chrome")) {
             if (AppConstants.platform.equalsIgnoreCase("local")) {
 //                co.addArguments("--remote-allow-origins=*");
@@ -91,7 +94,8 @@ public class BaseTest {
 
 
             } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
-                co.addArguments("--headless");//For GitHub Actions
+//                For GitHub Actions
+                co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
                 WebDriverManager.chromedriver().setup();
@@ -100,6 +104,8 @@ public class BaseTest {
             } else {
                 logger.error(platform + "This platform is not supported!");
             }
+
+//            Firefox browser
         } else if (browser.equalsIgnoreCase("firefox")) {
             if (platform.equalsIgnoreCase("local")) {
 //                fo.addArguments("--remote-allow-origins=*");
@@ -122,6 +128,7 @@ public class BaseTest {
 
 
             } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
+//                For GitHub Actions
                 fo.addArguments("--headless");//For GitHub Actions
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
@@ -131,6 +138,8 @@ public class BaseTest {
             } else {
                 logger.error(platform + "This platform is not supported!");
             }
+
+//            Edge browser
         } else if (browser.equalsIgnoreCase("edge")) {
             if (platform.equalsIgnoreCase("local")) {
 //                eo.addArguments("--remote-allow-origins=*");
@@ -154,7 +163,8 @@ public class BaseTest {
 
 
             } else if (AppConstants.platform.equalsIgnoreCase("remote_git")) {
-                eo.addArguments("--headless");//For GitHub Actions
+//                For GitHub Actions
+                eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
                 WebDriverManager.edgedriver().setup();
