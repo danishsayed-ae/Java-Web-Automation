@@ -21,7 +21,10 @@ public class LoginDataProvider {
 
     @DataProvider(name = "loginDataFromJson")
     public Object[][] loginDataFromJson() throws IOException {
-        CommonInteractions commonInteractions = new CommonInteractions(null); // Initialize with null driver for utility purpose
+//        Initialize with null driver for utility purpose
+        CommonInteractions commonInteractions = new CommonInteractions(null);
+
+//        Specify the path from where it should get the data
         List<HashMap<Object, Object>> loginDataList = commonInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/testData/loginTestData.json");
 
         Object[][] data = new Object[loginDataList.size()][2];
