@@ -39,6 +39,7 @@ import static base.AppConstants.platform;
 import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
+//    Initializing objects
     protected WebDriver driver;
     protected JavascriptExecutor js;
     protected String browser;
