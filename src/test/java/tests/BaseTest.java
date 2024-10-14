@@ -29,7 +29,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 
 import static configuration.DefaultConfiguration.platform;
-import static utils.ExtentReportHelper.getReport;
+import static configuration.ExtentReportConfiguration.getReport;
 
 public class BaseTest {
     //    Initializing objects

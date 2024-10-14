@@ -1,4 +1,4 @@
-package utils;
+package configuration;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -7,7 +7,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ExtentReportHelper {
+public class ExtentReportConfiguration {
     public static ExtentReports extentReports;
     static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd_MMM_yyyy_hh_mm_ss");
 
