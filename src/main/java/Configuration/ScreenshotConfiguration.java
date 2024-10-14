@@ -1,4 +1,4 @@
-package base;
+package Configuration;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.hc.client5.http.utils.Base64;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class BasePage
+public class ScreenshotConfiguration
 {
     public static String getScreenshot(String imageName, WebDriver driver) throws IOException
     {

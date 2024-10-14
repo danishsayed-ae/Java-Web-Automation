@@ -1,7 +1,7 @@
 package tests;
 
-import base.DefaultConfiguration;
-import base.BasePage;
+import Configuration.DefaultConfiguration;
+import Configuration.ScreenshotConfiguration;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -28,7 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 
-import static base.DefaultConfiguration.platform;
+import static Configuration.DefaultConfiguration.platform;
 import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
@@ -181,8 +181,8 @@ public class BaseTest {
             testLogger.get().log(Status.PASS, MarkupHelper.createLabel(iTestResult.getMethod().getMethodName() + " passed successfully.", ExtentColor.GREEN));
         } else {
             testLogger.get().log(Status.FAIL, "Test is failed due to: " + iTestResult.getThrowable());
-            String screenshot = BasePage.getScreenshot(iTestResult.getMethod().getMethodName() + ".jpg", driver);
-            testLogger.get().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(BasePage.convertImg_Base64(screenshot)).build());
+            String screenshot = ScreenshotConfiguration.getScreenshot(iTestResult.getMethod().getMethodName() + ".jpg", driver);
+            testLogger.get().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotConfiguration.convertImg_Base64(screenshot)).build());
             testLogger.get().log(Status.INFO, "Driver End Time: " + LocalDateTime.now());
         }
         driver.quit();
