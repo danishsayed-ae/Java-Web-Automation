@@ -1,4 +1,4 @@
-package Configuration;
+package configuration;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.hc.client5.http.utils.Base64;

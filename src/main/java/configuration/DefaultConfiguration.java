@@ -1,4 +1,4 @@
-package Configuration;
+package configuration;
 
 public class DefaultConfiguration {
 //    It will set "Chrome" as the default browser

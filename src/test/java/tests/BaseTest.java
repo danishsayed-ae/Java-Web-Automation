@@ -1,7 +1,7 @@
 package tests;
 
-import Configuration.DefaultConfiguration;
-import Configuration.ScreenshotConfiguration;
+import configuration.DefaultConfiguration;
+import configuration.ScreenshotConfiguration;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -28,7 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 
-import static Configuration.DefaultConfiguration.platform;
+import static configuration.DefaultConfiguration.platform;
 import static utils.ExtentReportHelper.getReport;
 
 public class BaseTest {
