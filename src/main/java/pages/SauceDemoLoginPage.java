@@ -1,10 +1,10 @@
 package pages;
 
-import genericKeywords.WebElementsInteractions;
+import keywords.CommonInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SauceDemoLoginPage extends WebElementsInteractions
+public class SauceDemoLoginPage extends CommonInteractions
 {
 //    We are declaring a private variable so that it cannot be accessed outside the LoginPageObject class
 //    We are declaring a final variable so that its value cannot be changed once assigned

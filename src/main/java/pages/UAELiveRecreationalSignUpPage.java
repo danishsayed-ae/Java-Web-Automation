@@ -1,11 +1,10 @@
 package pages;
 
-import genericKeywords.WebElementsInteractions;
+import keywords.CommonInteractions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class UAELiveRecreationalSignUpPage extends WebElementsInteractions {
+public class UAELiveRecreationalSignUpPage extends CommonInteractions {
     private final String url = "https://uaelive.astrautm.com/up/pilot-register";
     private final By firstName = By.id("firstName");
     private final By lastName = By.id("lastName");

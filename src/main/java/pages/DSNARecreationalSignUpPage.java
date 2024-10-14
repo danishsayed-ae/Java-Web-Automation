@@ -1,11 +1,10 @@
 package pages;
 
-import genericKeywords.WebElementsInteractions;
+import keywords.CommonInteractions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
-public class DSNARecreationalSignUpPage extends WebElementsInteractions {
+public class DSNARecreationalSignUpPage extends CommonInteractions {
     //    Locators
     private final By changeLanguageToEnglish = By.xpath("//button[contains(text(),'English')]");
     private final By firstNameTextField = By.id("firstName");
