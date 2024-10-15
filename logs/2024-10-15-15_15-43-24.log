@@ -1,0 +1,7 @@
+2024-10-15 15:43:24 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-15 15:43:32 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: firefox
+2024-10-15 15:43:50 [TestNG-tests-1] INFO  SauceDemoProductTest:21 - Products
+2024-10-15 15:43:50 [TestNG-tests-1] INFO  SauceDemoProductTest:22 - Sauce Labs Backpack
+2024-10-15 15:43:50 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: edge
+2024-10-15 15:43:55 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: edge
+2024-10-15 15:43:58 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: edge

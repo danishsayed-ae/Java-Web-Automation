@@ -18,7 +18,7 @@
     <test name="Edge Tests">
         <parameter name="browserName" value="edge"/>
         <classes>
-            <class name="tests.SauceDemoProductTest"/>
+            <class name="tests.LoginTest"/>
         </classes>
     </test>
 </suite>

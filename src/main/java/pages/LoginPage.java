@@ -20,7 +20,7 @@ public class LoginPage extends CommonInteractions {
     public void performUserLogin(String username, String password) {
         maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/");
-//        timeout1Second();
+        timeout1Second();
         clickElement(changeLanguageToEnglish);
 //        timeout1Second();
         sendText(userNameTextField, username);

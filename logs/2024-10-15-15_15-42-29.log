@@ -1,0 +1,4 @@
+2024-10-15 15:42:29 [main] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-15 15:42:37 [main] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-15 15:42:52 [main] INFO  SauceDemoProductTest:21 - Products
+2024-10-15 15:42:52 [main] INFO  SauceDemoProductTest:22 - Sauce Labs Backpack
