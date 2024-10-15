@@ -64,19 +64,22 @@ public class BaseTest {
         logger.info("Browser name is: " + browser);
 
 //        Added this condition to execute the tests using parameters from Maven Surefire plugin
+//        Chrome browser
         if (browser.equalsIgnoreCase("chrome")) {
+//            This will run the tests in local environment
             if (DefaultConfiguration.platform.equalsIgnoreCase("local")) {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
+//                This will run the tests in remote environment using Docker/Jenkins
             } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote")) {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
-//                Docker-Compose_Grid URL
+//                Docker-Compose-Grid URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
 
-//                Docker-Compose_Standalone URL
+//                Docker-Compose-Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
 
 //                Jenkins URL - Danish Home
@@ -85,7 +88,7 @@ public class BaseTest {
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
 
-
+//                This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 co.addArguments("--headless");
@@ -95,22 +98,24 @@ public class BaseTest {
 //                co.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(co);
             } else {
-                logger.error(platform + "This platform is not supported!");
+                logger.error(platform + "This environment is not supported !!");
             }
 
 //            Firefox browser
         } else if (browser.equalsIgnoreCase("firefox")) {
+//            This will run the tests in local environment
             if (platform.equalsIgnoreCase("local")) {
 //                fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+//                This will run the tests in remote environment using Docker/Jenkins
             } else if (platform.equalsIgnoreCase("remote")) {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
-//                Docker-Compose_Grid URL
+//                Docker-Compose-Grid URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
 
-//                Docker-Compose_Standalone URL
+//                Docker-Compose-Standalone URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
 
 //                Jenkins URL - Danish Home
@@ -119,7 +124,7 @@ public class BaseTest {
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
 
-
+//                This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 fo.addArguments("--headless");//For GitHub Actions
@@ -129,23 +134,25 @@ public class BaseTest {
 //                fo.addArguments("--remote-allow-origins=*");
                 driver = new FirefoxDriver(fo);
             } else {
-                logger.error(platform + "This platform is not supported!");
+                logger.error(platform + "This environment is not supported !!");
             }
 
 //            Edge browser
         } else if (browser.equalsIgnoreCase("edge")) {
+//            This will run the tests in local environment
             if (platform.equalsIgnoreCase("local")) {
 //                eo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
+//                This will run the tests in remote environment using Docker/Jenkins
             } else if (platform.equalsIgnoreCase("remote")) {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
-//                Docker-Compose_Grid URL
+//                Docker-Compose-Grid URL
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
 
-//                Docker-Compose_Standalone URL
+//                Docker-Compose-Standalone URL
 //                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
 
 //                Jenkins URL - Danish Home
@@ -154,7 +161,7 @@ public class BaseTest {
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
 
-
+//                This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
 //                For GitHub Actions
                 eo.addArguments("--headless");
@@ -164,10 +171,10 @@ public class BaseTest {
 //                eo.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(eo);
             } else {
-                logger.error(platform + "This platform is not supported!");
+                logger.error(platform + "This environment is not supported !!");
             }
         } else {
-            logger.info("Browser name is not supported!");
+            logger.info("This browser is not supported !!");
         }
 
 //        It will capture the method name of every test execution
