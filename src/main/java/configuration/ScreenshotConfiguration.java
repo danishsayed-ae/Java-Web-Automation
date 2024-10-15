@@ -14,7 +14,7 @@ public class ScreenshotConfiguration
     {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File f = ts.getScreenshotAs(OutputType.FILE);
-        String filePath = "./Screenshots/"+ imageName;
+        String filePath = "./screenshots/"+ imageName;
         FileUtils.copyFile(f, new File(filePath));
         return filePath;
     }

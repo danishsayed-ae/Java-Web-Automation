@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_COMPOSE_FILE = 'Docker/Docker-Compose-Grid.yml'
+        DOCKER_COMPOSE_FILE = 'docker/Docker-Compose-Grid.yml'
     }
 
     stages {

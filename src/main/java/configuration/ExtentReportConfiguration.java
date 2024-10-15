@@ -14,7 +14,7 @@ public class ExtentReportConfiguration {
 
     public static ExtentReports getReport() {
 //        Defining a path to save the report
-        String reportPath = "./Reports/"+dateTimeFormatter.format(LocalDateTime.now());
+        String reportPath = "./reports/"+dateTimeFormatter.format(LocalDateTime.now());
 //        Using Spark reporter and passing the report variable as a parameter
         ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(reportPath);
         extentSparkReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
