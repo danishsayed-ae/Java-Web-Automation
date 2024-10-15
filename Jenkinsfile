@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_COMPOSE_FILE = 'Docker/Docker-Compose_Grid.yml'
+        DOCKER_COMPOSE_FILE = 'Docker/Docker-Compose-Grid.yml'
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the repository
-                git url: 'https://github.com/danishsayed-ae/CICD-Automation-Web.git', branch: 'main'
+                git url: 'https://github.com/danishsayed-ae/Java-Web-Automation.git', branch: 'main'
             }
         }
 
