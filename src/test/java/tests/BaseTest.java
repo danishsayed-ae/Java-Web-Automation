@@ -51,7 +51,7 @@ public class BaseTest {
     //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
-//    Using "BeforeMethod" annotation by TestNG to setup the test environment
+//    Using "BeforeMethod" annotation by TestNG to set up the test environment
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
 //        Added a condition to check if we are receiving browserName from TestNG.xml file
@@ -80,10 +80,10 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
 
 //                Docker-Compose-Standalone URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
+                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
 
 //                Jenkins URL - Danish Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
 
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
@@ -116,10 +116,10 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
 
 //                Docker-Compose-Standalone URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
 
 //                Jenkins URL - Danish Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
 
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
@@ -153,10 +153,10 @@ public class BaseTest {
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
 
 //                Docker-Compose-Standalone URL
-//                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
+                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
 
 //                Jenkins URL - Danish Home
-                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
+//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
 
 //                Jenkins URL - Danish Office Laptop
 //                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
