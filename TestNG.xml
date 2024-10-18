@@ -15,10 +15,10 @@
             <class name="tests.SauceDemoProductTest"/>
         </classes>
     </test>
-<!--    <test name="Edge Tests">-->
-<!--        <parameter name="browserName" value="edge"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.LoginTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Edge Tests">
+        <parameter name="browserName" value="edge"/>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
 </suite>
