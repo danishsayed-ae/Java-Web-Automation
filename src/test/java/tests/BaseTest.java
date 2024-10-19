@@ -28,27 +28,27 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 
-import static configuration.DefaultConfiguration.platform;
+import static configuration.DefaultConfiguration.environment;
 import static configuration.ExtentReportConfiguration.getReport;
 
 public class BaseTest {
-//    Initializing objects
+    //    Initializing objects
     protected WebDriver driver;
     protected String browser;
 
-//    Initializing objects for each browser class
+    //    Initializing objects for each browser class
     ChromeOptions co = new ChromeOptions();
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-//    It helps us to create independent thread during execution
+    //    It helps us to create independent thread during execution
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
 
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
-//    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
+    //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
 //    Using "BeforeMethod" annotation by TestNG to set up the test environment
@@ -67,29 +67,40 @@ public class BaseTest {
 //        Chrome browser
         if (browser.equalsIgnoreCase("chrome")) {
 //            This will run the tests in local environment
-            if (DefaultConfiguration.platform.equalsIgnoreCase("local")) {
+            if (DefaultConfiguration.environment.equalsIgnoreCase("local")) {
 //                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-//                This will run the tests in remote environment using Docker/Jenkins
-            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote")) {
+
+//            This will run the tests in remote environment inside Docker Standalone containers
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("docker-compose-standalone")) {
                 co.setPlatformName("linux");
                 co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Standalone URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
+                driver = new RemoteWebDriver(new URL("http://localhost:4441/"), co);
+
+//             This will run the tests in remote environment inside Docker Selenium Grid/Hub containers
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("docker-compose-grid")) {
+                co.setPlatformName("linux");
+                co.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Grid URL
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), co);
 
+//                This will run the tests in remote environment inside jenkins
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("jenkins")) {
+                co.setPlatformName("linux");
+                co.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
 //                Jenkins URL - Danish Home
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), co);
 
 //                Jenkins URL - Danish Office Laptop
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), co);
 
 //                This will run the test in remote environment with GitHub Actions for CI/CD
-            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
@@ -98,72 +109,96 @@ public class BaseTest {
 //                co.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(co);
             } else {
-                logger.error(platform + "This environment is not supported !!");
+                logger.error(environment + "This environment is not supported !!");
             }
+
 
 //            Firefox browser
         } else if (browser.equalsIgnoreCase("firefox")) {
 //            This will run the tests in local environment
-            if (platform.equalsIgnoreCase("local")) {
+            if (environment.equalsIgnoreCase("local")) {
 //                fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
-//                This will run the tests in remote environment using Docker/Jenkins
-            } else if (platform.equalsIgnoreCase("remote")) {
+
+//                This will run the tests in remote environment inside Docker Standalone containers
+            } else if (environment.equalsIgnoreCase("docker-compose-standalone")) {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Standalone URL
-//                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4442/"), fo);
+
+//                This will run the tests in remote environment inside Docker Selenium Grid/Hub containers
+            } else if (environment.equalsIgnoreCase("docker-compose-grid")) {
+                fo.setPlatformName("linux");
+                fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Grid URL
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
 
+//                This will run the tests in remote environment inside jenkins
+            } else if (environment.equalsIgnoreCase("jenkins")) {
+                fo.setPlatformName("linux");
+                fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
 //                Jenkins URL - Danish Home
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), fo);
 
 //                Jenkins URL - Danish Office Laptop
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
 
-//                This will run the test in remote environment with GitHub Actions for CI/CD
-            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
+//            This will run the test in remote environment with GitHub Actions for CI/CD
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
-                fo.addArguments("--headless");//For GitHub Actions
+                fo.addArguments("--headless");
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
                 WebDriverManager.firefoxdriver().setup();
 //                fo.addArguments("--remote-allow-origins=*");
                 driver = new FirefoxDriver(fo);
             } else {
-                logger.error(platform + "This environment is not supported !!");
+                logger.error(environment + "This environment is not supported !!");
             }
 
-//            Edge browser
+
+//        Edge browser
         } else if (browser.equalsIgnoreCase("edge")) {
 //            This will run the tests in local environment
-            if (platform.equalsIgnoreCase("local")) {
+            if (environment.equalsIgnoreCase("local")) {
 //                eo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
-//                This will run the tests in remote environment using Docker/Jenkins
-            } else if (platform.equalsIgnoreCase("remote")) {
+
+//                This will run the tests in remote environment inside Docker Standalone containers
+            } else if (environment.equalsIgnoreCase("docker-compose-standalone")) {
                 eo.setPlatformName("linux");
                 eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Standalone URL
-//                driver= new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
+                driver = new RemoteWebDriver(new URL("http://localhost:4443/"), eo);
+
+//                This will run the tests in remote environment inside Docker Selenium Grid/Hub containers
+            } else if (environment.equalsIgnoreCase("docker-compose-grid")) {
+                eo.setPlatformName("linux");
+                eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
 //                Docker-Compose-Grid URL
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), eo);
 
+//                This will run the tests in remote environment inside jenkins
+            } else if (environment.equalsIgnoreCase("jenkins")) {
+                eo.setPlatformName("linux");
+                eo.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
 //                Jenkins URL - Danish Home
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.196:4444/wd/hub"), eo);
 
 //                Jenkins URL - Danish Office Laptop
-//                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
+                driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), eo);
 
 //                This will run the test in remote environment with GitHub Actions for CI/CD
-            } else if (DefaultConfiguration.platform.equalsIgnoreCase("remote_git")) {
+            } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
@@ -171,9 +206,11 @@ public class BaseTest {
                 WebDriverManager.edgedriver().setup();
 //                eo.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(eo);
+
             } else {
-                logger.error(platform + "This environment is not supported !!");
+                logger.error(environment + "This environment is not supported !!");
             }
+
         } else {
             logger.info("This browser is not supported !!");
         }
