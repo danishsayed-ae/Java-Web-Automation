@@ -32,23 +32,23 @@ import static configuration.DefaultConfiguration.platform;
 import static configuration.ExtentReportConfiguration.getReport;
 
 public class BaseTest {
-    //    Initializing objects
+//    Initializing objects
     protected WebDriver driver;
     protected String browser;
 
-    //    Initializing objects for each browser class
+//    Initializing objects for each browser class
     ChromeOptions co = new ChromeOptions();
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-    //    It helps us to create independent thread during execution
+//    It helps us to create independent thread during execution
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
 
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
-    //    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
+//    Using "Parameter" annotation by TestNG to enable parallel execution with different browsers
     @Parameters({"browserName"})
 
 //    Using "BeforeMethod" annotation by TestNG to set up the test environment
