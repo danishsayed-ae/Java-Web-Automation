@@ -101,7 +101,7 @@ public class BaseTest {
                 logger.error(platform + "This environment is not supported !!");
             }
 
-//            Firefox browser code
+//            Firefox browser
         } else if (browser.equalsIgnoreCase("firefox")) {
 //            This will run the tests in local environment
             if (platform.equalsIgnoreCase("local")) {
