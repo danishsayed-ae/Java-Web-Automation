@@ -137,7 +137,7 @@ public class BaseTest {
 //                Docker-Compose-Grid URL
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/"), fo);
 
-//                This will run the tests in remote environment inside jenkins
+//              This will run the tests in remote environment inside jenkins
             } else if (environment.equalsIgnoreCase("jenkins")) {
                 fo.setPlatformName("linux");
                 fo.setPageLoadStrategy(PageLoadStrategy.EAGER);
@@ -148,7 +148,7 @@ public class BaseTest {
 //                Jenkins URL - Danish Office Laptop
                 driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), fo);
 
-//            This will run the test in remote environment with GitHub Actions for CI/CD
+//             This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 fo.addArguments("--headless");
