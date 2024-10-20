@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.performUserLogin(username, password);
 
-        // Assertion
+        // Assertion to check if logout button is displayed after successfully logging in
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
         if (isLoggedIn) {
             Assert.assertTrue(isLoggedIn, "Test failed: Login should be successful with valid credentials.");
