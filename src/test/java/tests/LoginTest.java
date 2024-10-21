@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
         }
     }
 
-    // Helper method to check the presence of an element
+    // Helper method to check the presence of an element that accepts a locator as argument
     private boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
