@@ -42,10 +42,12 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
     private final By pilotTrainingCertificate = By.xpath("//label[@for='pilotTrainingCertificate']");
     private final By termsAndConditions = By.id("checkbox");
 
+//    Constructor
     public UAELiveRecreationalSignUpPage(WebDriver driver) {
         super(driver);
     }
 
+//    Page Actions
     public void fillApplicantInformation(String firstNameValue, String lastNameValue, String arabicFullNameValue, String arabicFamilyNameValue, String arabicAliasValue) {
         visitURL(url);
         sendText(firstName, firstNameValue);
