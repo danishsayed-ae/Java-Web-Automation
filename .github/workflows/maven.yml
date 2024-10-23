@@ -36,7 +36,7 @@ jobs:
         cache: maven
     - name: Build with TestNG xml files
       run: >
-        mvn clean test
+        mvn test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
         -Dplatform=GitHubActions
