@@ -54,7 +54,7 @@ public class BaseTest {
 //    Using "BeforeMethod" annotation by TestNG to set up the test environment
     @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
-//        Added a condition to check if we are receiving browserName from TestNG.xml file
+//        Added a condition to check if we are receiving browserName from TestNG.xml file otherwise it will set the default browser from Default Configuration
         if (browserName != null) {
             browser = browserName;
         } else {
