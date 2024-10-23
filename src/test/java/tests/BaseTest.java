@@ -103,7 +103,7 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(co);
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
@@ -154,7 +154,7 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+                driver = new FirefoxDriver(fo);
                 fo.addArguments("--headless");
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
@@ -205,7 +205,7 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(eo);
                 eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
