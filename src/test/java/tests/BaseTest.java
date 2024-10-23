@@ -102,12 +102,14 @@ public class BaseTest {
 //                This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(co);
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
                 co.addArguments("--remote-allow-origins=*");
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver(co);
+//                WebDriverManager.chromedriver().setup();
+//                driver = new ChromeDriver(co);
             } else {
                 logger.error(environment + "This environment is not supported !!");
             }
@@ -151,12 +153,14 @@ public class BaseTest {
 //             This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver(fo);
                 fo.addArguments("--headless");
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
                 fo.addArguments("--remote-allow-origins=*");
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver(fo);
+//                WebDriverManager.firefoxdriver().setup();
+//                driver = new FirefoxDriver(fo);
             } else {
                 logger.error(environment + "This environment is not supported !!");
             }
@@ -200,12 +204,14 @@ public class BaseTest {
 //                This will run the test in remote environment with GitHub Actions for CI/CD
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver(eo);
                 eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
                 eo.addArguments("--remote-allow-origins=*");
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver(eo);
+//                WebDriverManager.edgedriver().setup();
+//                driver = new EdgeDriver(eo);
 
             } else {
                 logger.error(environment + "This environment is not supported !!");
