@@ -14,10 +14,11 @@ on:
       browsername:
         type: string
         description: "Enter browser name: "
+        default: chrome
       xmlfilename:
         type: string
         description: "Enter .xml file name: "
-
+        default: TestNG.xml
   push:
     branches: [ "main" ]
   pull_request:
