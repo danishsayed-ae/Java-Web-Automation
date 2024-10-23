@@ -105,8 +105,8 @@ public class BaseTest {
                 co.addArguments("--headless");
                 co.addArguments("--disable-gpu");
                 co.addArguments("--no-sandbox");
+                co.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
-//                co.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(co);
             } else {
                 logger.error(environment + "This environment is not supported !!");
@@ -154,8 +154,8 @@ public class BaseTest {
                 fo.addArguments("--headless");
                 fo.addArguments("--disable-gpu");
                 fo.addArguments("--no-sandbox");
+                fo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
-//                fo.addArguments("--remote-allow-origins=*");
                 driver = new FirefoxDriver(fo);
             } else {
                 logger.error(environment + "This environment is not supported !!");
@@ -203,8 +203,8 @@ public class BaseTest {
                 eo.addArguments("--headless");
                 eo.addArguments("--disable-gpu");
                 eo.addArguments("--no-sandbox");
+                eo.addArguments("--remote-allow-origins=*");
                 WebDriverManager.edgedriver().setup();
-//                eo.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(eo);
 
             } else {
