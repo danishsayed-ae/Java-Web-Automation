@@ -34,6 +34,12 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Setup Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser
+
     - name: Build with TestNG xml files
       run: >
         mvn test

@@ -12,7 +12,7 @@ public class SauceDemoLoginPage extends CommonInteractions
     private final By passwordTextFiled = By.id("password");
     private final By loginButton = By.id("login-button");
 
-//    We have created a constructor and the parameter driver is given life from the WebElementsInteractions class and this driver will be used in LoginPageTest
+//    We have created a constructor and the parameter driver is given life from the CommonInteractions class and this driver will be used in LoginPageTest
     public SauceDemoLoginPage(WebDriver driver)
     {
         super(driver);
