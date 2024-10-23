@@ -62,9 +62,9 @@ public class CommonInteractions {
         return driver.findElement(locator).getText();
     }
 
-    public void timeout1Second() {
+    public void timeout3Seconds() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

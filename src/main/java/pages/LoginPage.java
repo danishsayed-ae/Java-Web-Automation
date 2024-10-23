@@ -20,14 +20,14 @@ public class LoginPage extends CommonInteractions {
     public void performUserLogin(String username, String password) {
         maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/");
-        timeout1Second();
+        timeout3Seconds();
         clickElement(changeLanguageToEnglish);
 //        timeout1Second();
         sendText(userNameTextField, username);
 //        timeout1Second();
         sendText(passwordTextField, password);
-        timeout1Second();
+        timeout3Seconds();
         clickElement(loginButton);
-        timeout1Second();
+        timeout3Seconds();
     }
 }

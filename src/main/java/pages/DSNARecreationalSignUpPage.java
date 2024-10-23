@@ -32,9 +32,9 @@ public class DSNARecreationalSignUpPage extends CommonInteractions {
         sendText(mobileNumberTextField, mobileNo);
         sendText(passwordTextField, password);
         sendText(confirmPasswordTextField, confirmPassword);
-        timeout1Second();
+        timeout3Seconds();
         clickElement(termsAndConditions);
-        timeout1Second();
+        timeout3Seconds();
         clickElement(submitButton);
     }
 
