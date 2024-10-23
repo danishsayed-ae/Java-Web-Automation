@@ -38,8 +38,10 @@ jobs:
     - name: Build with TestNG xml files
       run: >
         mvn clean test
-        -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
-        -DbrowserName=${{inputs.browsername}}
+#        -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
+        -Dsurefire.suiteXmlFiles=TestNG.xml
+#        -DbrowserName=${{inputs.browsername}}
+        -DbrowserName=chrome
         -Dplatform=GitHubActions
         -Dmaven.test.failure.ignore=true
 
