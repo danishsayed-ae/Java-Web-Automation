@@ -103,13 +103,12 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.chromedriver().setup();
+                co.addArguments("--headless"); // Run in headless mode
+                co.addArguments("--disable-gpu"); // Disable GPU hardware acceleration
+                co.addArguments("--no-sandbox"); // Bypass OS security model (needed in CI environments)
+                co.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
+                co.addArguments("--remote-allow-origins=*"); // Allow necessary remote origins
                 driver = new ChromeDriver(co);
-                co.addArguments("--headless");
-                co.addArguments("--disable-gpu");
-                co.addArguments("--no-sandbox");
-                co.addArguments("--remote-allow-origins=*");
-//                WebDriverManager.chromedriver().setup();
-//                driver = new ChromeDriver(co);
             } else {
                 logger.error(environment + "This environment is not supported !!");
             }
@@ -154,13 +153,12 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.firefoxdriver().setup();
+                fo.addArguments("--headless"); // Run in headless mode
+                fo.addArguments("--disable-gpu"); // Disable GPU hardware acceleration
+                fo.addArguments("--no-sandbox"); // Bypass OS security model (needed in CI environments)
+                fo.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
+                fo.addArguments("--remote-allow-origins=*"); // Allow necessary remote origins
                 driver = new FirefoxDriver(fo);
-                fo.addArguments("--headless");
-                fo.addArguments("--disable-gpu");
-                fo.addArguments("--no-sandbox");
-                fo.addArguments("--remote-allow-origins=*");
-//                WebDriverManager.firefoxdriver().setup();
-//                driver = new FirefoxDriver(fo);
             } else {
                 logger.error(environment + "This environment is not supported !!");
             }
@@ -205,13 +203,12 @@ public class BaseTest {
             } else if (DefaultConfiguration.environment.equalsIgnoreCase("GitHubActions")) {
 //                For GitHub Actions
                 WebDriverManager.edgedriver().setup();
+                eo.addArguments("--headless"); // Run in headless mode
+                eo.addArguments("--disable-gpu"); // Disable GPU hardware acceleration
+                eo.addArguments("--no-sandbox"); // Bypass OS security model (needed in CI environments)
+                eo.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
+                eo.addArguments("--remote-allow-origins=*"); // Allow necessary remote origins
                 driver = new EdgeDriver(eo);
-                eo.addArguments("--headless");
-                eo.addArguments("--disable-gpu");
-                eo.addArguments("--no-sandbox");
-                eo.addArguments("--remote-allow-origins=*");
-//                WebDriverManager.edgedriver().setup();
-//                driver = new EdgeDriver(eo);
 
             } else {
                 logger.error(environment + "This environment is not supported !!");

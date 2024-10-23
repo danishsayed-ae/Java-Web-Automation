@@ -1,0 +1,7 @@
+2024-10-23 13:11:50 [TestNG-tests-2] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-23 13:11:50 [TestNG-tests-1] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-23 13:11:50 [TestNG-tests-3] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-23 13:11:57 [TestNG-tests-3] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-23 13:12:02 [TestNG-tests-3] INFO  BaseTest:64 - Browser name is: chrome
+2024-10-23 13:12:08 [TestNG-tests-2] INFO  SauceDemoProductTest:21 - Products
+2024-10-23 13:12:08 [TestNG-tests-2] INFO  SauceDemoProductTest:22 - Sauce Labs Backpack
