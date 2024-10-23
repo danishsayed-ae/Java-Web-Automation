@@ -52,7 +52,7 @@ public class BaseTest {
     @Parameters({"browserName"})
 
 //    Using "BeforeMethod" annotation by TestNG to set up the test environment
-    @BeforeClass
+    @BeforeMethod
     public void setupTest(@Optional String browserName, ITestResult iTestResult) throws MalformedURLException {
 //        Added a condition to check if we are receiving browserName from TestNG.xml file
         if (browserName != null) {

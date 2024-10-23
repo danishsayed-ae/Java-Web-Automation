@@ -112,8 +112,8 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>${XmlFile}</suiteXmlFile>
                         </suiteXmlFiles>
-<!--                        <parallel>tests</parallel>-->
-<!--                        <threadCount>3</threadCount>-->
+                        <parallel>tests</parallel>
+                        <threadCount>3</threadCount>
                     </configuration>
                 </plugin>
                 <!-- Jar plugin -->
@@ -153,18 +153,18 @@
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>2.22.1</version>-->
-<!--                <configuration>-->
-<!--                    <suiteXmlFiles>-->
-<!--                        <suiteXmlFile>${XmlFile}</suiteXmlFile>-->
-<!--                    </suiteXmlFiles>-->
-<!--                    <parallel>tests</parallel>-->
-<!--                    <threadCount>3</threadCount>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${XmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <parallel>tests</parallel>
+                    <threadCount>3</threadCount>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
