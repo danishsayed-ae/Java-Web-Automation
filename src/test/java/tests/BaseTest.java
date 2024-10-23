@@ -157,7 +157,7 @@ public class BaseTest {
                 fo.addArguments("--disable-gpu"); // Disable GPU hardware acceleration
                 fo.addArguments("--no-sandbox"); // Bypass OS security model (needed in CI environments)
                 fo.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
-                fo.addArguments("--remote-allow-origins=*"); // Allow necessary remote origins
+//                fo.addArguments("--remote-allow-origins=*"); // Allow necessary remote origins
                 driver = new FirefoxDriver(fo);
             } else {
                 logger.error(environment + "This environment is not supported !!");
