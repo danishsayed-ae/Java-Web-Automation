@@ -17,7 +17,7 @@ on:
         default: chrome
       xmlfilename:
         type: string
-        description: "Enter suite xml file name: "
+        description: "Enter xml file name: "
   push:
     branches: [ "main" ]
   pull_request:
@@ -25,9 +25,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -41,7 +39,7 @@ jobs:
         mvn clean test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
-        -Dplatform=remote_git
+        -Dplatform=GitHubActions
         -Dmaven.test.failure.ignore=true
 
 #Report Generation
