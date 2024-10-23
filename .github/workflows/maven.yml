@@ -14,11 +14,11 @@ on:
       browsername:
         type: string
         description: "Enter browser name: "
-        default: chrome
+#        default: chrome
       xmlfilename:
         type: string
         description: "Enter .xml file name: "
-        default: TestNG.xml
+#        default: TestNG.xml
   push:
     branches: [ "main" ]
   pull_request:
@@ -38,8 +38,10 @@ jobs:
     - name: Build with TestNG xml files
       run: >
         mvn clean test
+#        This will take the values from the workflow-dispatch mentioned above, only if you trigger workflow manually
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
+#        This will set default values for .xml file and browser as per below if workflow-dispatch is not used
         -Dsurefire.suiteXmlFiles=TestNG.xml
         -DbrowserName=chrome
         -Dplatform=GitHubActions
