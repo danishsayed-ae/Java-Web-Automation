@@ -37,7 +37,7 @@ jobs:
 
     - name: Build with TestNG xml files
       run: >
-        mvn test
+        mvn clean test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
         -Dplatform=GitHubActions
