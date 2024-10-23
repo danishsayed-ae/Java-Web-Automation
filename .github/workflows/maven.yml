@@ -34,7 +34,6 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-
     - name: Build with TestNG xml files
       run: >
         mvn clean test
