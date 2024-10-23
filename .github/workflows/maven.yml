@@ -32,7 +32,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '21'
-        distribution: 'temurin'
+        distribution: 'murine'
         cache: maven
     - name: Build with TestNG xml files
       run: >
