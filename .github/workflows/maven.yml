@@ -18,6 +18,7 @@ on:
       xmlfilename:
         type: string
         description: "Enter xml file name: "
+        default: TestNG.xml
   push:
     branches: [ "main" ]
   pull_request:
