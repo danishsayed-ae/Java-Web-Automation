@@ -40,7 +40,7 @@ jobs:
         mvn clean test
         -Dsurefire.suiteXmlFiles=${{inputs.xmlfilename}}
         -DbrowserName=${{inputs.browsername}}
-        -Dplatform=GitHubActions
+        -Dplatform=
         -Dmaven.test.failure.ignore=true
 
 #Report Generation
