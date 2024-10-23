@@ -18,6 +18,4 @@ public class DefaultConfiguration {
 
 //    It will be used to set "GitHubActions" as the default environment for test execution
     public static final String environment = System.getProperty("platform", "GitHubActions");
-
-
 }
