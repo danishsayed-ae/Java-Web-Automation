@@ -13,11 +13,11 @@ on:
     inputs:
       browsername:
         type: string
-        description: "Browser Name: "
+        description: "Enter browser name: "
         default: chrome
       xmlfilename:
         type: string
-        description: "Enter xml file name: "
+        description: "Enter .xml file name: "
         default: TestNG.xml
   push:
     branches: [ "main" ]
@@ -48,4 +48,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: sparkHTML
-        path: ./Report/*.html
+        path: ./reports/*.html
