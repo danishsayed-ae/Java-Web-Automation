@@ -11,11 +11,11 @@ public class DefaultConfiguration {
 //    public static final String environment = System.getProperty("platform", "docker-compose-standalone");
 
     //    It will be used to set "Docker Grid" as the default environment for test execution
-//    public static final String environment = System.getProperty("platform", "docker-compose-grid");
+    public static final String environment = System.getProperty("platform", "docker-compose-grid");
 
     //    It will be used to set "Jenkins" as the default environment for test execution
 //    public static final String environment = System.getProperty("platform", "jenkins");
 
 //    It will be used to set "GitHubActions" as the default environment for test execution
-    public static final String environment = System.getProperty("platform", "GitHubActions");
+//    public static final String environment = System.getProperty("platform", "GitHubActions");
 }
