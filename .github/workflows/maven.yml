@@ -34,7 +34,7 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-        
+
     - name: Setup Chrome
       run: |
         sudo apt-get update
