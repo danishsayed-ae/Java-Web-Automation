@@ -85,9 +85,7 @@ public class CommonInteractions {
             checkbox.click();
         }
     }
-
-
-
+    
 /*    public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
