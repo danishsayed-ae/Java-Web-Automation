@@ -41,7 +41,7 @@ public class BaseTest {
     EdgeOptions eo = new EdgeOptions();
     FirefoxOptions fo = new FirefoxOptions();
 
-    //    It helps us to create independent thread during execution
+    //    It helps us to create independent thread during test execution
     protected static ThreadLocal<ExtentTest> testLogger = new ThreadLocal<>();
 
     protected static final ExtentReports extentReports = getReport();
