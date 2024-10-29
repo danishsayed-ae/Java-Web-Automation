@@ -24,7 +24,7 @@ public class LoginDataProvider {
 //        Initialize with null driver for utility purpose
         CommonInteractions commonInteractions = new CommonInteractions(null);
 
-//        Specify the path from where it should get the dataset
+//        Specify the path from where it should get the test dataset
         List<HashMap<Object, Object>> loginDataList = commonInteractions.getJSONData(System.getProperty("user.dir") + "/src/main/java/testData/loginTestData.json");
 
         Object[][] data = new Object[loginDataList.size()][2];
