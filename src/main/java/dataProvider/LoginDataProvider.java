@@ -20,7 +20,7 @@ public class LoginDataProvider {
         };
     }
 
-//    Using the dataset from the json file that will be specified below
+//    Using the dataset from the JSON file that will be specified below
     @DataProvider(name = "loginDataFromJson")
     public Object[][] loginDataFromJson() throws IOException {
 //        Initialize with null driver for utility purpose
