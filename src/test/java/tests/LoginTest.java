@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.performUserLogin(username, password);
 
-        // Assertion to check if logout button is displayed after successfully logging in
+        // Assertion to check if logout button is displayed after successful login.
         boolean isLoggedIn = isElementPresent(By.xpath("//a[contains(text(),'Logout')]"));
         if (isLoggedIn) {
             Assert.assertTrue(isLoggedIn, "Test failed: Login should be successful with valid credentials.");
@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
         }
     }
 
-    // Helper method to check the presence of an element that accepts a locator as argument
+    // Helper method to check the presence of an element that accepts a locator as argument.
     private boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
