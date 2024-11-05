@@ -22,6 +22,16 @@ public class DSNARecreationalSignUpPage extends CommonInteractions {
     }
 
     //    Page Action Method
+
+    /**
+     * This method will perform user sign up
+     * @param firstName Enter your first name
+     * @param lastName Enter your last name
+     * @param email Enter your email address
+     * @param mobileNo Enter your mobile number
+     * @param password Enter your desired password
+     * @param confirmPassword Enter your desired password
+     */
     public void performUserSignUp(String firstName, String lastName, String email, String mobileNo, String password, String confirmPassword) {
         maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/pilot-register");
