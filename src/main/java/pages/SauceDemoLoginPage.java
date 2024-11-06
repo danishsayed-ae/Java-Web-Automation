@@ -23,7 +23,7 @@ public class SauceDemoLoginPage extends CommonInteractions
     /**
      * This method performs login
      * @param username Enter your username
-     * @param password
+     * @param password Enter your password
      * @throws InterruptedException
      */
     public void userLogin(String username, String password) throws InterruptedException {
