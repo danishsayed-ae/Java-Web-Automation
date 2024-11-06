@@ -19,7 +19,6 @@ public class SauceDemoLoginPage extends CommonInteractions
     }
 
 //    We have created this method that expects two String parameters username and password
-
     /**
      * This method performs login
      * @param username Enter your username
