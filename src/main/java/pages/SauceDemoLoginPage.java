@@ -19,6 +19,13 @@ public class SauceDemoLoginPage extends CommonInteractions
     }
 
 //    We have created this method that expects two String parameters username and password
+
+    /**
+     * This method performs login
+     * @param username Enter your username
+     * @param password
+     * @throws InterruptedException
+     */
     public void userLogin(String username, String password) throws InterruptedException {
         visitURL("https://www.saucedemo.com/");
         sendText(userNameTextField, username);
