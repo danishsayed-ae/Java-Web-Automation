@@ -65,7 +65,10 @@ public class CommonInteractions {
         driver.findElement(locator).sendKeys(text);
     }
 
-    
+    /**
+     * This method will launch the URL
+     * @param url Enter the desired URL that you want to visit
+     */
     public void visitURL(String url) {
         driver.get(url);
     }
