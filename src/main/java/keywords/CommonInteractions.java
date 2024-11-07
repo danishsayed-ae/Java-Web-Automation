@@ -56,10 +56,16 @@ public class CommonInteractions {
         driver.manage().window().maximize();
     }
 
+    /**
+     * This method will type the text
+     * @param locator Mention the locator where you want to type
+     * @param text Enter the text that you want to type
+     */
     public void sendText(By locator, String text) {
         driver.findElement(locator).sendKeys(text);
     }
 
+    
     public void visitURL(String url) {
         driver.get(url);
     }
