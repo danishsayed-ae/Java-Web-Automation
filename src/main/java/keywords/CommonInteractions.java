@@ -43,6 +43,11 @@ public class CommonInteractions {
     }
 
     //    Custom methods using Keyword Driven
+
+    /**
+     * This method will click on a particular element
+     * @param locator Mention the locator where you want to click
+     */
     public void clickElement(By locator) {
         driver.findElement(locator).click();
     }
