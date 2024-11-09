@@ -92,6 +92,11 @@ public class CommonInteractions {
         js.executeScript("window.scrollBy(0,300)");
     }
 
+    /**
+     * This method is used to select a value from the dropdown
+     * @param locator Mention the locator of the dropdown where you want to select
+     * @param value Enter the value that should be selected in the dropdown
+     */
     public void selectDropdownByVisibleText(By locator, String value) {
         Select dropdown = new Select(driver.findElement(locator));
         dropdown.selectByVisibleText(value);
