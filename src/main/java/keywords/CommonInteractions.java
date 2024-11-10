@@ -102,6 +102,11 @@ public class CommonInteractions {
         dropdown.selectByVisibleText(value);
     }
 
+    /**
+     * This method is used to select a value from checkbox
+     * @param locator Mention the locator of the dropdown where you want to select
+     * @param value Enter the value that should be selected in the checkbox
+     */
     public void selectCheckbox(By locator, boolean value) {
         WebElement checkbox = driver.findElement(locator);
         if (checkbox.isSelected() != value) {
