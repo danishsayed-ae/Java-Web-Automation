@@ -125,6 +125,9 @@ public class CommonInteractions {
         rb.keyRelease(KeyEvent.VK_ENTER);
     }*/
 
+    /**
+     * This method is used to switch to the child window
+     */
     public void switchToChildWindow() {
         // Get all the windows
         Set<String> windows = driver.getWindowHandles();
