@@ -73,6 +73,11 @@ public class CommonInteractions {
         driver.get(url);
     }
 
+    /**
+     * This method will fetch the text from a specific locator
+     * @param locator Mention the locator from where you want to fetch the text
+     * @return
+     */
     public String retrieveTextData(By locator) {
         return driver.findElement(locator).getText();
     }
