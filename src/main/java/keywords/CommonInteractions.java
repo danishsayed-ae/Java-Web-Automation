@@ -82,6 +82,9 @@ public class CommonInteractions {
         return driver.findElement(locator).getText();
     }
 
+    /**
+     * This method will pause the execution for 3 seconds
+     */
     public void timeout3Seconds() {
         try {
             Thread.sleep(3000);
