@@ -42,7 +42,7 @@ public class CommonInteractions {
         this.js = (JavascriptExecutor) driver;
     }
 
-    //    Custom methods using Keyword Driven
+    //    Custom methods following Keyword Driven framework
 
     /**
      * This method will click on a particular element
