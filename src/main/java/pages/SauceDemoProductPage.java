@@ -14,11 +14,16 @@ public class SauceDemoProductPage extends CommonInteractions {
         super(driver);
     }
 
+    /**
+     * This method gets the title of the page
+     * @return
+     */
     public String getTitleOfPage()
     {
         return retrieveTextData(productPageTitle);
     }
 
+    
     public String getProductName()
     {
         return retrieveTextData(getFirstProductText);
