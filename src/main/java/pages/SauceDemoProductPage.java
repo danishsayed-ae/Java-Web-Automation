@@ -23,7 +23,10 @@ public class SauceDemoProductPage extends CommonInteractions {
         return retrieveTextData(productPageTitle);
     }
 
-    
+    /**
+     * This method gets the name of the product
+     * @return
+     */
     public String getProductName()
     {
         return retrieveTextData(getFirstProductText);
