@@ -4,19 +4,19 @@
 <!--And then depending upon the number of tests defined below and the thread-count the number of browser will be invoked-->
 <suite name="All Test Suite" parallel="tests" thread-count="3">
     <test name="Chrome Tests">
-        <parameter name="browserName" value="firefox"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="tests.SauceDemoLoginTest"/>
         </classes>
     </test>
     <test name="Firefox Tests">
-        <parameter name="browserName" value="firefox"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="tests.SauceDemoProductTest"/>
         </classes>
     </test>
     <test name="Edge Tests">
-        <parameter name="browserName" value="firefox"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="tests.LoginTest"/>
         </classes>
