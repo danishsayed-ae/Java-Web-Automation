@@ -48,6 +48,15 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
     }
 
 //    Page Actions
+
+    /**
+     * This method fills the applicant information
+     * @param firstNameValue Enter the first name
+     * @param lastNameValue Enter the first name
+     * @param arabicFullNameValue Enter the full name in Arabic
+     * @param arabicFamilyNameValue Enter the family name in Arabic
+     * @param arabicAliasValue Enter the alias name in Arabic
+     */
     public void fillApplicantInformation(String firstNameValue, String lastNameValue, String arabicFullNameValue, String arabicFamilyNameValue, String arabicAliasValue) {
         visitURL(url);
         sendText(firstName, firstNameValue);
