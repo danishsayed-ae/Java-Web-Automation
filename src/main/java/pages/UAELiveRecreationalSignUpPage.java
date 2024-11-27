@@ -74,6 +74,11 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
         clickElement(nationalityValue);
     }
 
+    /**
+     * This method fills the applicant information
+     * @param passportNumberValue Enter the passport number
+     * @param emiratesIDNoValue Enter Emirates ID number
+     */
     public void fillIdentificationInformation(String passportNumberValue, String emiratesIDNoValue) {
         sendText(passportNumber, passportNumberValue);
         clickElement(passportIssuePlace);
