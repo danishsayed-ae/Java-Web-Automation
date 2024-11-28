@@ -90,6 +90,13 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
         clickElement(emiratesIdExpiryDate);
     }
 
+    /**
+     * This method fills the account information
+     * @param emailIdValue Enter the email address
+     * @param mobileNumberValue Enter the mobile number without country code
+     * @param phoneNumberValue Enter the phone number without country code
+     * @param passwordValue Enter the password
+     */
     public void fillAccountInformation(String emailIdValue, String mobileNumberValue, String phoneNumberValue, String passwordValue) {
         clickElement(accountInformation);
         scrollDown();
