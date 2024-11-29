@@ -108,6 +108,9 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
         scrollDown();
     }
 
+    /**
+     * This method fills the declaration of information
+     */
     public void fillDeclarationOfInformation() {
         clickElement(stateCode);
         clickElement(stateCodeValue);
