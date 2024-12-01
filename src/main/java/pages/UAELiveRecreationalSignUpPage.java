@@ -118,14 +118,20 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
         clickElement(cityCodeValue);
         scrollDown();
     }
-/*
+
+    /**
+     * This method uploads the document
+     * @param passportPath Specify the path where the file is stored
+     * @param visaCopyPath Specify the path where the file is stored
+     * @param applicantPhotoPath Specify the path where the file is stored
+     * @param emiratesIDPath Specify the path where the file is stored
+     */
     public void uploadAttachments(String passportPath, String visaCopyPath, String applicantPhotoPath, String emiratesIDPath) {
         uploadFile(passport, passportPath);
         uploadFile(visaCopy, visaCopyPath);
         uploadFile(applicantPhoto, applicantPhotoPath);
         uploadFile(emiratesID, emiratesIDPath);
     }
-*/
 
     public void checkTermsAndConditions() {
         clickElement(termsAndConditions);

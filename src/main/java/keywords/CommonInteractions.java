@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -23,10 +26,7 @@ import java.util.Set;
 public class CommonInteractions {
     protected WebDriver driver;
     protected JavascriptExecutor js;
-
-    /*
     protected Robot rb;
-
     {
         try {
             rb = new Robot();
@@ -34,7 +34,6 @@ public class CommonInteractions {
             throw new RuntimeException(e);
         }
     }
-*/
 
     //    Constructor
     public CommonInteractions(WebDriver driver) {
@@ -122,7 +121,7 @@ public class CommonInteractions {
         }
     }
 
-/*    public void uploadFile(By locator, String filePath) {
+    public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
         StringSelection uploadDocument = new StringSelection("C:\\Users\\danis\\OneDrive\\Desktop\\Documents\\" + filePath);
@@ -131,7 +130,7 @@ public class CommonInteractions {
         rb.keyPress(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-    }*/
+    }
 
     /**
      * This method is used to switch to the child window
