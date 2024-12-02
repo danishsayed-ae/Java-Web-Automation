@@ -133,6 +133,9 @@ public class UAELiveRecreationalSignUpPage extends CommonInteractions {
         uploadFile(emiratesID, emiratesIDPath);
     }
 
+    /**
+     * This method clicks on Terms and Conditions
+     */
     public void checkTermsAndConditions() {
         clickElement(termsAndConditions);
     }
