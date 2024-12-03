@@ -17,6 +17,12 @@ public class LoginPage extends CommonInteractions {
     }
 
     //    Page Action
+
+    /**
+     * This method performs login
+     * @param username Enter the username
+     * @param password Enter the password
+     */
     public void performUserLogin(String username, String password) {
         maximizeWindow();
         visitURL("https://stagingdsna.astrautm.com/");
