@@ -121,6 +121,11 @@ public class CommonInteractions {
         }
     }
 
+    /**
+     * This method is used to upload file
+     * @param locator Mention the locator of the file upload
+     * @param filePath Mention the file path that should be uploaded
+     */
     public void uploadFile(By locator, String filePath) {
         WebElement uploadFileLocator = driver.findElement(locator);
         uploadFileLocator.click();
