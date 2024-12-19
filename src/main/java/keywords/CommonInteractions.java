@@ -93,7 +93,7 @@ public class CommonInteractions {
     }
 
     /**
-     * This method is used to scroll down on the screen
+     * This method is used to scroll down on the screen by 300 pixels
      */
     public void scrollDown() {
         js.executeScript("window.scrollBy(0,300)");
