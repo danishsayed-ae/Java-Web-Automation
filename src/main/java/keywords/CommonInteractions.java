@@ -155,6 +155,10 @@ public class CommonInteractions {
         driver.switchTo().window(childID);
     }
 
+    /**
+     * This method is used to wait for the element to be visible
+     * @param locator
+     */
     public void waitForElementToBeVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
